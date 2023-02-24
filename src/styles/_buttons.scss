@@ -1,0 +1,18 @@
+@import '../styles/variables';
+
+.mainButton {
+    border-radius: 2rem;
+    border: 1px solid $black; 
+    padding:  0.3rem 2rem;
+}
+
+.squareButton {
+    border: 1px solid $line-brown;
+    background: $button-taupe;
+    padding:  0.3rem 1rem;
+}
+
+.linkButton {
+    background: transparent;
+    border: none;
+}

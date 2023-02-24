@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Form } from "react-router-dom";
 
 import classes from "./GuestInfo.module.scss";
 import Modal from "../modal/Modal";
@@ -22,6 +23,7 @@ function GuestInfo({ name, address, contact, status, guests }) {
 
   return (
     <>
+    
       <h3 className="d-flex justify-content-between">
         {name}
         <span> {guests} Guests</span>
@@ -35,18 +37,38 @@ function GuestInfo({ name, address, contact, status, guests }) {
             <p> Status: {status} </p>
           </li>
 
-          <button onClick={onOpenModal}>Edit</button>
+          <button className={classes.squareButton} onClick={onOpenModal}>Edit</button>
         </>
       )}
 
-      <button onClick={onToggleCard}>Expand</button>
+      <button className={classes.linkButton} onClick={onToggleCard}>{isCardExpanded ? 'Close' : 'Expand'}</button>
     
       {modalIsVisible && (
         <div className={classes.modalContainer}>
         <Modal>
-          <button onClick={onCloseModal}>Cancel</button>
-        </Modal>
+          <Form className={`${classes.Form} d-flex flex-column align-items-center justify-content-center px-5 py-5` }>
+         
+         <div className={`d-flex flex-column`}>
+           <label htmlFor="guestName">Edit Guest Name</label>
+          <input type="text" id="guestName"/>
+         </div>
+
+         <div className={`d-flex flex-column`}>
+           <label htmlFor="guests">Edit Guests</label>
+          <input type="number" id="guests" value={guests}/>
+         </div>
+         <div className={`d-flex flex-column`}>
+           <label htmlFor="contact">Edit Contact</label>
+          <input type="text" id="contact"/>
+         </div>
+         
+         <div className={`d-flex justify-content-end`}></div>
+          <button className={classes.mainButton} >Save</button>
+          <button type="button" onClick={onCloseModal}>Cancel</button>
+          </Form>
+          </Modal>
         <div className={classes.backdrop} onClick={onCloseModal}></div>
+      
         </div>
       )}
     </>

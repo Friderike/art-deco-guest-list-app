@@ -6,7 +6,7 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  function navigatHandler() {
+  function navigateHandler() {
     if (location.pathname === '/guest-list') {
       navigate("/party-list");
     } else if (location.pathname === '/party-list') {
@@ -20,7 +20,7 @@ function Header() {
         <h2>I am the awesome header          
         </h2>
 
-        <button className={classes.headerBtn} onClick={navigatHandler}>
+        <button className={classes.headerBtn} onClick={navigateHandler}>
           {location.pathname === '/guest-list'? 'Back to Parties' : 'Guest List'}
           </button>
       </header>

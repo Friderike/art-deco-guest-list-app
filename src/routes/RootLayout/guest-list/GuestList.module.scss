@@ -1,3 +1,12 @@
 .guestCard {
     background: #fff;
 }
+
+.blur {
+    background: black;
+    opacity: 0.4;
+    filter: blur(10px);
+    height: 100v;
+position: absolute;
+inset: 0;
+}

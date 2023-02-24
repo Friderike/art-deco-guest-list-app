@@ -1,12 +1,23 @@
 import { useState } from "react";
 
 import classes from "./GuestInfo.module.scss";
+import Modal from "../modal/Modal";
 
 function GuestInfo({ name, address, contact, status, guests }) {
-  let [isCardExpanded, setCardState] = useState(false);
+  const [isCardExpanded, setCardState] = useState(false);
+  let [modalIsVisible, setModalOpen] = useState(false);
 
   function onToggleCard() {
     setCardState((isCardExpanded) => !isCardExpanded);
+  }
+
+  function onOpenModal() {
+    setModalOpen((modalIsVisible = true));
+    console.log(modalIsVisible);
+  }
+
+  function onCloseModal() {
+    setModalOpen((modalIsVisible = false));
   }
 
   return (
@@ -17,14 +28,27 @@ function GuestInfo({ name, address, contact, status, guests }) {
       </h3>
 
       {isCardExpanded && (
-        <li>
-          <p> Adress: {address}</p>
-          <p>Contact: {contact}</p>
-          <p> Status: {status} </p>
-        </li>
+        <>
+          <li>
+            <p> Adress: {address}</p>
+            <p>Contact: {contact}</p>
+            <p> Status: {status} </p>
+          </li>
+
+          <button onClick={onOpenModal}>Edit</button>
+        </>
       )}
 
       <button onClick={onToggleCard}>Expand</button>
+    
+      {modalIsVisible && (
+        <div className={classes.modalContainer}>
+        <Modal>
+          <button onClick={onCloseModal}>Cancel</button>
+        </Modal>
+        <div className={classes.backdrop} onClick={onCloseModal}></div>
+        </div>
+      )}
     </>
   );
 }

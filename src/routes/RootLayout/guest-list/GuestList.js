@@ -1,4 +1,3 @@
-import classes from "./GuestList.module.scss";
 import GuestInfo from "../../../components/guest-info/GuestInfo";
 import { useLoaderData } from "react-router-dom";
 
@@ -12,16 +11,17 @@ function GuestList() {
 
   function checkStatus() {
     guestsInfo.map((guest) => {
+      console.log('loop1')
       if (guest.status === "Attending") {
         attending = true;
       } else if (guest.status === "Not Attending") {
         notAttending = true;
       } else if (guest.status === "No Response") {
-       noResponse = true
+        noResponse = true;
       } else if (guest.status === "Unsent") {
-       unsent = true
-      } 
-      return guest
+        unsent = true;
+      }
+      return guest;
     });
   }
 
@@ -34,81 +34,82 @@ function GuestList() {
 
           <div className="d-flex justify-content-between">
             <div>
-              {attending ? 
-                guestsInfo.map(
-                  (guest, index) => (
-                    guest.status === "Attending" && (
-                      <ul key={index}>
-                        <GuestInfo
-                          name={guest.name}
-                          address={guest.address}
-                          contact={guest.contact}
-                          status={guest.status}
-                          guests={guest.guests}
-                          id={guest.id}
-                        />
-                      </ul>
-                    )
+              {attending
+                ? guestsInfo.map(
+                
+                    (guest, index) =>
+                      guest.status === "Attending" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
                   )
-                ) : noGuests}
+                : noGuests}
             </div>
 
             <div>
-              {notAttending ?
-                guestsInfo.map(
-                  (guest, index) => (
-                    guest.status === "Not Attending" && (
-                      <ul key={index}>
-                        <GuestInfo
-                          name={guest.name}
-                          address={guest.address}
-                          contact={guest.contact}
-                          status={guest.status}
-                          guests={guest.guests}
-                          id={guest.id}
-                        />
-                      </ul>
-                    )
+              {notAttending
+                ? guestsInfo.map(
+                    (guest, index) =>
+                      guest.status === "Not Attending" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
                   )
-                ) : noGuests}
+                : noGuests}
             </div>
             <div>
-              {noResponse ?
-                guestsInfo.map(
-                  (guest, index) => (
-                    guest.status === "No Response" && (
-                      <ul key={index}>
-                        <GuestInfo
-                          name={guest.name}
-                          address={guest.address}
-                          contact={guest.contact}
-                          status={guest.status}
-                          guests={guest.guests}
-                          id={guest.id}
-                        />
-                      </ul>
-                    )
+              {noResponse
+                ? guestsInfo.map(
+                    (guest, index) =>
+                      guest.status === "No Response" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
                   )
-                ) : noGuests}
+                : noGuests}
             </div>
             <div>
-              {unsent ?
-                guestsInfo.map(
-                  (guest, index) => (
-                    guest.status === "Unsent" && (
-                      <ul key={index}>
-                        <GuestInfo
-                          name={guest.name}
-                          address={guest.address}
-                          contact={guest.contact}
-                          status={guest.status}
-                          guests={guest.guests}
-                          id={guest.id}
-                        />
-                      </ul>
-                    )
+              {unsent
+                ? guestsInfo.map(
+                    (guest, index) =>
+                      guest.status === "Unsent" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
                   )
-                ) : noGuests}
+                : noGuests}
             </div>
           </div>
         </section>

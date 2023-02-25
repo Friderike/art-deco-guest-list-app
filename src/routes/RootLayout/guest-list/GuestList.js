@@ -11,7 +11,6 @@ function GuestList() {
 
   function checkStatus() {
     guestsInfo.map((guest) => {
-      console.log('loop1')
       if (guest.status === "Attending") {
         attending = true;
       } else if (guest.status === "Not Attending") {
@@ -35,9 +34,7 @@ function GuestList() {
           <div className="d-flex justify-content-between">
             <div>
               {attending
-                ? guestsInfo.map(
-                
-                    (guest, index) =>
+                ? guestsInfo.map((guest, index) =>
                       guest.status === "Attending" && (
                         <ul key={index}>
                           <GuestInfo
@@ -120,8 +117,29 @@ function GuestList() {
 
 export default GuestList;
 
+
+export async function action({ request, params }) {
+
+  const formData = await request.formData();
+  const enteredGuestInfo = {
+    name: formData.get('name'),
+    guests: formData.get('guests'),
+    contact: formData.get('contact')
+  }
+
+  const response = await fetch("http://localhost:8080/guest_info", {
+     method: "Post",
+     body: JSON.stringify(enteredGuestInfo),
+     headers: {
+      "Content-Type": "application/json",
+     }
+  });   
+  return formData;    
+}
+
 export async function loader() {
   const response = await fetch("http://localhost:8080/guest_info");
   const resData = await response.json();
   return resData;
 }
+

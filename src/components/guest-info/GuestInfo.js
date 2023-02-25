@@ -46,20 +46,20 @@ function GuestInfo({ name, address, contact, status, guests }) {
       {modalIsVisible && (
         <div className={classes.modalContainer}>
         <Modal>
-          <Form className={`${classes.Form} d-flex flex-column align-items-center justify-content-center px-5 py-5` }>
+          <Form method="post" className={`${classes.Form} d-flex flex-column align-items-center justify-content-center px-5 py-5` }>
          
          <div className={`d-flex flex-column`}>
-           <label htmlFor="guestName">Edit Guest Name</label>
-          <input type="text" id="guestName"/>
+           <label htmlFor="name">Edit Guest Name</label>
+          <input type="text" id="name" name="name"/>
          </div>
 
          <div className={`d-flex flex-column`}>
            <label htmlFor="guests">Edit Guests</label>
-          <input type="number" id="guests" value={guests}/>
+          <input type="number" id="guests" name="guests"/>
          </div>
          <div className={`d-flex flex-column`}>
            <label htmlFor="contact">Edit Contact</label>
-          <input type="text" id="contact"/>
+          <input type="text" id="contact" name="contact"/>
          </div>
          
          <div className={`d-flex justify-content-end`}></div>
@@ -76,3 +76,5 @@ function GuestInfo({ name, address, contact, status, guests }) {
 }
 
 export default GuestInfo;
+
+

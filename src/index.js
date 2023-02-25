@@ -7,7 +7,7 @@ import App from "./routes/App";
 import "./routes/RootLayout/RootLayout";
 import RootLayout from "./routes/RootLayout/RootLayout";
 import PartyList from "./routes/RootLayout/landing/PartyList";
-import GuestList, { loader as guestInfoLoader} from "./routes/RootLayout/guest-list/GuestList";
+import GuestList, { loader as guestInfoLoader, action as editGuestAction} from "./routes/RootLayout/guest-list/GuestList";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +26,7 @@ const router = createBrowserRouter([
             path: "/guest-list",
             element: <GuestList />,
             loader: guestInfoLoader,
+            action: editGuestAction
           },      
     ],
   },

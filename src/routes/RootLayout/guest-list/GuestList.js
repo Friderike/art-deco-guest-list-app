@@ -1,5 +1,8 @@
-import GuestInfo from "../../../components/guest-info/GuestInfo";
 import { useLoaderData } from "react-router-dom";
+
+import classes from './GuestList.module.scss'
+import GuestInfo from "../../../components/guest-info/GuestInfo";
+import invitationHeader from '../../../assets/invitations-subhead-arch.svg'
 
 function GuestList() {
   const guestsInfo = useLoaderData();
@@ -28,11 +31,14 @@ function GuestList() {
     checkStatus(),
     (
       <>
-        <section className="d-flex flex-column align-items-center w-100">
-          <h2>I am the Guest List </h2>
-
-          <div className="d-flex justify-content-between">
-            <div>
+      <div className={classes.invitationContainer}>
+        <h2>I am the Guest List </h2>
+        <section className={classes.gridCol12}>
+          <div className={`${classes.invitationContainer} d-flex flex-column`}>
+            <div className={`${classes.guestCardHeader}`}>   
+          <img src={invitationHeader} alt="Attending" />
+            </div>
+            <div className={classes.guestCard}>
               {attending
                 ? guestsInfo.map((guest, index) =>
                       guest.status === "Attending" && (
@@ -49,9 +55,10 @@ function GuestList() {
                       )
                   )
                 : noGuests}
+            </div>         
             </div>
 
-            <div>
+            <div className={classes.guestCard}>
               {notAttending
                 ? guestsInfo.map(
                     (guest, index) =>
@@ -70,7 +77,7 @@ function GuestList() {
                   )
                 : noGuests}
             </div>
-            <div>
+            <div className={classes.guestCard}>
               {noResponse
                 ? guestsInfo.map(
                     (guest, index) =>
@@ -89,7 +96,7 @@ function GuestList() {
                   )
                 : noGuests}
             </div>
-            <div>
+            <div className={classes.guestCard}>
               {unsent
                 ? guestsInfo.map(
                     (guest, index) =>
@@ -108,8 +115,9 @@ function GuestList() {
                   )
                 : noGuests}
             </div>
-          </div>
+      
         </section>
+        </div>
       </>
     )
   );

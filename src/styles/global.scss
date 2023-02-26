@@ -1,2 +1,22 @@
 @import './buttons';
 @import './variables';
+@import './mixin.scss';
+
+
+ul {
+    margin: 0;
+    padding: 0;
+  
+    list-style: none;
+  }
+  
+.gridCol12 {
+    display: grid;
+    width: max(100%, 12.68rem);
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    justify-content: center;
+    padding: max(1.6rem, 4.7rem );
+    column-gap: max(2rem, 4rem);
+    row-gap: 2rem;
+}
+

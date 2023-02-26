@@ -10,6 +10,7 @@ function Header() {
     if (location.pathname === '/guest-list') {
       navigate("/party-list");
     } else if (location.pathname === '/party-list') {
+      console.log(location.pathname)
       navigate("/guest-list");
     }
   }
@@ -21,7 +22,7 @@ function Header() {
         </h2>
 
         <button className={classes.headerBtn} onClick={navigateHandler}>
-          {location.pathname === '/guest-list'? 'Back to Parties' : 'Guest List'}
+          {location.pathname.includes('/guest-list') ? 'Back to Parties' : 'Guest List'}
           </button>
       </header>
     </>

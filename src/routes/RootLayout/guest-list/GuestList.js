@@ -117,14 +117,20 @@ function GuestList() {
 
 export default GuestList;
 
+export async function loader() {
+  const response = await fetch("http://localhost:8080/guest_info");
+  const resData = await response.json();
+  return resData;
+}
 
-export async function action({ request, params }) {
+export async function action({ request}) {
 
   const formData = await request.formData();
   const enteredGuestInfo = {
     name: formData.get('name'),
     guests: formData.get('guests'),
-    contact: formData.get('contact')
+    contact: formData.get('contact'),
+    status: formData.get('status')
   }
 
   const response = await fetch("http://localhost:8080/guest_info", {
@@ -134,12 +140,5 @@ export async function action({ request, params }) {
       "Content-Type": "application/json",
      }
   });   
-  return formData;    
+  return response;    
 }
-
-export async function loader() {
-  const response = await fetch("http://localhost:8080/guest_info");
-  const resData = await response.json();
-  return resData;
-}
-

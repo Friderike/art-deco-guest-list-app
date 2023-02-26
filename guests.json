@@ -47,12 +47,13 @@
       "status": "No Response",
       "id": 6
     },
+
     {
-      "name": "Foo",
-      "guests": "0",
-      "contact": "foo@gmail.com",
-      "status": "Unsent",
-      "id": 7
+      "name": "Vincent",
+      "guests": "6",
+      "contact": "vinn@Vinny.com",
+      "status": "Attending",
+      "id": 8
     }
   ]
 }

@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Form } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import classes from "./GuestInfo.module.scss";
 import Modal from "../modal/Modal";
+import AddGuest from "../../routes/RootLayout/add-guest/AddGuest";
 
-function GuestInfo({ name, address, contact, status, guests }) {
+function GuestInfo({ name, address, contact, status, guests, id }) {
+  const navigate = useNavigate();
   const [isCardExpanded, setCardState] = useState(false);
   let [modalIsVisible, setModalOpen] = useState(false);
 
@@ -14,7 +16,7 @@ function GuestInfo({ name, address, contact, status, guests }) {
 
   function onOpenModal() {
     setModalOpen((modalIsVisible = true));
-    console.log(modalIsVisible);
+    navigate("add-guest");
   }
 
   function onCloseModal() {
@@ -23,7 +25,6 @@ function GuestInfo({ name, address, contact, status, guests }) {
 
   return (
     <>
-    
       <h3 className="d-flex justify-content-between">
         {name}
         <span> {guests} Guests</span>
@@ -37,38 +38,30 @@ function GuestInfo({ name, address, contact, status, guests }) {
             <p> Status: {status} </p>
           </li>
 
-          <button className={classes.squareButton} onClick={onOpenModal}>Edit</button>
+          <button className={classes.squareButton} onClick={onOpenModal}>
+            Add Guest
+          </button>
         </>
       )}
 
-      <button className={classes.linkButton} onClick={onToggleCard}>{isCardExpanded ? 'Close' : 'Expand'}</button>
-    
+      <button className={classes.linkButton} onClick={onToggleCard}>
+        {isCardExpanded ? "Close" : "Expand"}
+      </button>
+
       {modalIsVisible && (
         <div className={classes.modalContainer}>
-        <Modal>
-          <Form method="post" className={`${classes.Form} d-flex flex-column align-items-center justify-content-center px-5 py-5` }>
-         
-         <div className={`d-flex flex-column`}>
-           <label htmlFor="name">Edit Guest Name</label>
-          <input type="text" id="name" name="name"/>
-         </div>
-
-         <div className={`d-flex flex-column`}>
-           <label htmlFor="guests">Edit Guests</label>
-          <input type="number" id="guests" name="guests"/>
-         </div>
-         <div className={`d-flex flex-column`}>
-           <label htmlFor="contact">Edit Contact</label>
-          <input type="text" id="contact" name="contact"/>
-         </div>
-         
-         <div className={`d-flex justify-content-end`}></div>
-          <button className={classes.mainButton} >Save</button>
-          <button type="button" onClick={onCloseModal}>Cancel</button>
-          </Form>
+          <Modal>
+            <AddGuest
+              name={name}
+              address={address}
+              contact={contact}
+              status={status}
+              guests={guests}
+              id={id}
+             closeModal={onCloseModal}
+            />
           </Modal>
-        <div className={classes.backdrop} onClick={onCloseModal}></div>
-      
+          <div className={classes.backdrop} onClick={onCloseModal}></div>
         </div>
       )}
     </>
@@ -76,5 +69,3 @@ function GuestInfo({ name, address, contact, status, guests }) {
 }
 
 export default GuestInfo;
-
-

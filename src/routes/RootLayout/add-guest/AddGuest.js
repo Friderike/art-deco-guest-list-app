@@ -3,8 +3,7 @@ import Modal from "../../../components/modal/Modal";
 
 import classes from "./AddGuest.module.scss";
 
-
-function AddGuest({closeModal}) {
+function AddGuest({ closeModal }) {
 
   return (
     <>

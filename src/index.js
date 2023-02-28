@@ -6,7 +6,7 @@ import "./styles/index.scss";
 import App from "./routes/App";
 import "./routes/RootLayout/RootLayout";
 import RootLayout from "./routes/RootLayout/RootLayout";
-import PartyList from "./routes/RootLayout/landing/PartyList";
+import PartyList from "./routes/RootLayout/parties/PartyList";
 import GuestList, { loader as guestInfoLoader, action as addGuestAction } from "./routes/RootLayout/guest-list/GuestList";
 import AddGuest  from './routes/RootLayout/add-guest/AddGuest'
 

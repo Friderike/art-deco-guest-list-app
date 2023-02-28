@@ -1,8 +1,11 @@
+@import '../../styles/ui.scss';
 
-.headerBtn {
-    border-radius: 1rem;
-    outline: 1px solid #232323;
-  }
+.headerTopSection {
+  background: $mid-taupe;
+
+  @include bottomDropShadow();
+}
+
 
 
   

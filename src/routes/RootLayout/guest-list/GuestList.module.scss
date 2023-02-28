@@ -1,21 +1,52 @@
-@import "../../../styles/global.scss";
+@import "../../../styles/ui.scss";
 
 .invitationContainer {
+  background: $light-taupe;
   width: 100%;
-    isolation: isolate;
+  isolation: isolate;
 
-  .guestCardHeader {
-    z-index: 10;
-    margin-bottom: -1px;
+  .guestContainer {
+    width: 100%;
+    max-width: 28rem;
+
+    @media (max-width: 576px) {
+      width: min(26rem, 100%);
+    }
   }
+}
 
-  .guestCard {
-    background: #fff;
-    padding: 2.8rem 2rem 2rem;
-    height: 46.3rem;
-    overflow-y: auto;
-    border: 1px solid $line-brown;
+.modalContainer {
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  place-items: center;
 
-    @include insetBoxShadow();
+  .Form {
+    background: $light-taupe;
+    &::before {
+      content: "";
+    }
+  }
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    background: #000;
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
   }
 }

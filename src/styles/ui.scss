@@ -1,0 +1,95 @@
+@import "./buttons";
+@import "./variables";
+@import "./types";
+@import "./mixin.scss";
+
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.gridCol12Cards {
+  display: grid;
+  width: min(100%, 120.68rem);
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  justify-items: center;
+  column-gap: 4rem;
+  row-gap: 2rem;
+  margin-inline: auto;
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+//******* UI Elemenets ***********
+
+.mainCardHeader {
+  z-index: 10;
+  margin-bottom: -1px;
+  position: relative;
+
+  .cardHeadingContainer {
+    background-image: url("../assets/diamond-shape-bg.png");
+    background-repeat: no-repeat;
+    width: clamp(20.5rem, 77%, 21.5rem);
+    inset: 3.2rem 0 0.5rem;
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    margin: auto;
+    display: grid;
+    place-content: center;
+    padding: 2.3rem;
+      
+    .cardHeading {
+      font-family: 'Limelight', cursive;
+      font-size: 2rem;
+      background: $white;
+      border-radius: 2rem;
+      border: 1px solid $black;
+      padding: 0.5rem 2rem;
+      min-width: 18.5rem;
+      display: grid;
+      place-content: center;
+      white-space: nowrap;
+  
+      @media (max-width: 576px) {
+        font-size: 1.6rem;
+        min-width: 16.5rem;
+      }
+    }
+  }
+}
+
+.mainCard {
+  background: $white;
+  padding: 2.8rem 2rem 2rem;
+  height: 46.3rem;
+  overflow-y: auto;
+  border-inline: 1px solid $line-brown;
+
+  @include insetBoxShadow();
+}
+
+
+//******* spacing *********
+.mlAuto {
+  margin-left: auto;
+}
+
+.mainContainerOffset {
+  padding-left: 5.2rem;
+  padding-right: 5.2rem;
+}
+
+//******* media queries ********
+
+.mobileOnly {
+  @media (max-width: 577px) {
+    display: none;
+  }
+}

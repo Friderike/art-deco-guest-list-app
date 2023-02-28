@@ -47,13 +47,19 @@
       "status": "No Response",
       "id": 6
     },
-
     {
       "name": "Vincent",
       "guests": "6",
       "contact": "vinn@Vinny.com",
       "status": "Attending",
       "id": 8
+    },
+    {
+      "name": "Vinny",
+      "guests": "6",
+      "contact": "vinn@Vinny.com",
+      "status": "Not Attending",
+      "id": 9
     }
   ]
 }

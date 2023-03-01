@@ -2,24 +2,31 @@
 
 .mainButton {
   border-radius: 5rem;
-  border: 1px solid $white;
+  border: 2px solid $white;
   background: $black;
   color: $white;
-  padding: 0.7rem 2.1rem;
+  height: 3.4rem;
+  padding: 0.5rem 2.1rem;
+  display: flex;
+  align-items: center;
   transition: 0.2s;
+  -webkit-text-stroke: 1px $white;
 
   &:hover {
     background: $mid-taupe;
     color: $black;
-    border: 1 px solid $black;
+    border: 2px solid $black;
+    -webkit-text-stroke: 1px $black;
   }
 }
 
 .backBtnContainer {
-    padding: 2rem 2.5rem;
+  padding: 1.5rem 2.5rem;
   background-image: url("../assets/back-btn-bg.svg");
   background-position: left;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 
 .mainBtnContainer {
@@ -27,6 +34,8 @@
     background-image: url("../assets/main-btn-bg.svg");
     background-position: center;
     background-repeat: no-repeat;
+    display: grid;
+    place-content: center;
   }
 
 

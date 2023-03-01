@@ -11,7 +11,7 @@ function GuestInfo({ name, address, contact, status, guests, id, showModal, clos
 
   return (
     <>
-    <div className="d-flex flex-column">
+    <div className={`${classes.detailCard} ${classes.mb20} d-flex flex-column`}>
       <h3 className="d-flex justify-content-between">
         {name}
         <span> {guests} Guests</span>

@@ -75,10 +75,20 @@ ul {
   @include insetBoxShadow();
 }
 
+.detailCard {
+  background: $paper;
+  padding: 2rem;
+  border: 1px solid $black;
+}
+
 
 //******* spacing *********
 .mlAuto {
   margin-left: auto;
+}
+
+.mb20 {
+  margin-bottom: 2rem;
 }
 
 .mainContainerOffset {

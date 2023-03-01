@@ -2,8 +2,23 @@
 
 .headerTopSection {
   background: $mid-taupe;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'btn-left mainTitle btn-right';
 
   @include bottomDropShadow();
+
+  a {
+    text-decoration: none;
+  }
+
+  .mainTitleContainer {
+    background-image: url('../../assets/deco-triangles.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    grid-area: mainTitle;
+  }
 }
 
 

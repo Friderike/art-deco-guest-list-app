@@ -23,7 +23,17 @@ function AddGuest({ closeModal }) {
               type="number"
               id="guests"
               name="guests"
-              placeholder="Guests"
+              placeholder="Enter Number of Guests"
+            />
+          </div>
+
+          <div className={`d-flex flex-column`}>
+            <label htmlFor="guests">Add Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Enter Address"
             />
           </div>
 
@@ -33,7 +43,7 @@ function AddGuest({ closeModal }) {
               type="text"
               id="contact"
               name="contact"
-              placeholder="Contact"
+              placeholder="Enter Contact"
             />
           </div>
 

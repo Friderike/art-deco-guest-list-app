@@ -1,5 +1,12 @@
+@import "../../../styles/ui.scss";
+
 .partyListContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainBtnContainer {
+    justify-self: flex-end;
+    grid-area: btn-right;
 }

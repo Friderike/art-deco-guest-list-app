@@ -5,6 +5,11 @@
   width: 100%;
   isolation: isolate;
 
+  .headerBtnRight {
+    place-content: center;
+    justify-self: end;
+  }
+
   .guestContainer {
     width: 100%;
     max-width: 28rem;

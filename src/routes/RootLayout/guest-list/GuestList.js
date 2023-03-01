@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import classes from "./GuestList.module.scss";
 import GuestInfo from "../../../components/guest-info/GuestInfo";
@@ -50,8 +50,14 @@ function GuestList() {
       <>
         <div className={`${classes.invitationContainer} d-flex flex-column`}>
           <Header pageTitle={"Guest List"}>
-          <div className={`${classes.mainBtnContainer}`}>
-            <button className={classes.mainButton} onClick={onOpenModal}>
+          
+          <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft}`}>
+            <Link className={`${classes.mainButton} `} to="/party-list">
+             Back to Parties
+            </Link>
+          </div>
+          <div className={`${classes.mainBtnContainer} ${classes.headerBtnRight}`}>
+            <button className={`${classes.mainButton} `} onClick={onOpenModal}>
               Add Guest
             </button>
             </div>
@@ -222,6 +228,7 @@ export async function action({ request }) {
   const enteredGuestInfo = {
     name: formData.get("name"),
     guests: formData.get("guests"),
+    address: formData.get("address"),
     contact: formData.get("contact"),
     status: formData.get("status"),
   };

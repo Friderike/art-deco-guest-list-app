@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
 
 import classes from "./GuestInfo.module.scss";
 
@@ -28,29 +29,10 @@ function GuestInfo({ name, address, contact, status, guests, id, showModal, clos
         </>
       )}
       
-      <button className={classes.linkButton} onClick={onToggleCard}>
-        {isCardExpanded ? "Close" : "Expand"}
+      <button className={classes.roundBtn} onClick={onToggleCard}>
+        {/* {isCardExpanded ? "Close" : "Expand"} */}
+       <ExpandLessRoundedIcon className={`${isCardExpanded ? `${classes.arrowDown}` : `${classes.arrowUp}`} material-icons ${classes.caret}`} style={{fontSize: '25px'}}/>
       </button>
-
-      {/* {showModal && (
-        <div className={`${classes.addGuestContainer} 'd-flex flex-column '`}>
-        <div className={classes.modalContainer}>
-      
-            <AddGuest
-              name={name}
-              address={address}
-              contact={contact}
-              status={status}
-              guests={guests}
-              id={id}
-            />
-         <button onClick={closeModal}>
-          Cancel
-          </button>
-  
-        </div>
-        </div>
-    )} */}
     </div>
     
     </>

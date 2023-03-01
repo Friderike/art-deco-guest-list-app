@@ -10,12 +10,20 @@
     justify-self: end;
   }
 
+  .mainContainerOffset {
+    padding-top: 5rem;
+  }
+
   .guestContainer {
     width: 100%;
     max-width: 28rem;
 
     @media (max-width: 576px) {
       width: min(26rem, 100%);
+    }
+
+    .cardHeadingContainer {
+      inset: 3.2rem 0 0.5rem;
     }
   }
 }

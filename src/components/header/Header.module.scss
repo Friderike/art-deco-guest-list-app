@@ -1,26 +1,83 @@
-@import '../../styles/ui.scss';
+@import "../../styles/ui.scss";
 
-.headerTopSection {
-  background: $mid-taupe;
+.mainHeader {
+  padding-top: 0.8rem;
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: 'btn-left mainTitle btn-right';
+  isolation: isolate;
 
-  @include bottomDropShadow();
+  .borderLT {
+    width: 40%;
+    height: 0.1rem;
+    background: $line-brown;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  a {
-    text-decoration: none;
+    &::after {
+      content: "\25B2";
+      font-weight: normal;
+      color: $line-brown;
+      font-size: 0.6rem;
+      position: absolute;
+      right: -0.2rem;
+      top: -0.7rem;
+    }
+  }
+  .borderRT {
+    width: 40%;
+    height: 0.1rem;
+    background: $line-brown;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &::before {
+      content: "\25B2";
+      font-weight: normal;
+      color: $line-brown;
+      font-size: 0.6rem;
+      position: absolute;
+      left: -0.2rem;
+      top: -0.7rem;
+    }
   }
 
-  .mainTitleContainer {
-    background-image: url('../../assets/deco-triangles.svg');
-    background-repeat: no-repeat;
-    background-position-x: center;
-    grid-area: mainTitle;
+  .headerTopSection {
+    background: $mid-taupe;
+    padding: 0 max(1.6rem, 2rem);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "btn-left mainTitle btn-right";
+
+    @include bottomDropShadow();
+
+    a {
+      text-decoration: none;
+    }
+
+    .mainTitleContainer {
+      background-image: url("../../assets/deco-triangles.svg");
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-size: min(100, 20rem);
+      grid-area: mainTitle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .mainTitleHeading {
+        position: absolute;
+        top: 2.8rem;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
   }
+
+  .cardHeadingContainer {
+   position: relative;
+   margin-top: -2rem;
+  }
+
 }
-
-
-
-  

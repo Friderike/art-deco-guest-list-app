@@ -49,14 +49,14 @@ function GuestList() {
     (
       <>
         <div className={`${classes.invitationContainer} d-flex flex-column`}>
-          <Header pageTitle={"Guest List"}>
+          <Header pageTitle={"Invitations"} mainTitle={'Miranda’s Midnight Masquerade'}>
           
-          <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft}`}>
+          <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft} ${classes.my10}`}>
             <Link className={`${classes.mainButton} `} to="/party-list">
              Back to Parties
             </Link>
           </div>
-          <div className={`${classes.mainBtnContainer} ${classes.headerBtnRight}`}>
+          <div className={`${classes.mainBtnContainer} ${classes.headerBtnRight} ${classes.my10}`}>
             <button className={`${classes.mainButton} `} onClick={onOpenModal}>
               Add Guest
             </button>
@@ -75,7 +75,7 @@ function GuestList() {
                   aria-hidden="true"
                 />
                 <div className={classes.cardHeadingContainer}>
-                  <h3 className={`${classes.cardHeading} mb-0`}>Attending</h3>
+                  <h3 className={`${classes.cardHeading} ${classes.fontLimeLight} mb-0`}>Attending</h3>
                 </div>
               </div>
               <div className={classes.mainCard}>
@@ -107,7 +107,7 @@ function GuestList() {
                   aria-hidden="true"
                 />
                 <div className={classes.cardHeadingContainer}>
-                  <h3 className={`${classes.cardHeading} mb-0`}>
+                  <h3 className={`${classes.cardHeading} ${classes.fontLimeLight} mb-0`}>
                     Not Attending
                   </h3>
                 </div>
@@ -141,7 +141,7 @@ function GuestList() {
                   aria-hidden="true"
                 />
                 <div className={classes.cardHeadingContainer}>
-                  <h3 className={`${classes.cardHeading} mb-0`}>No Response</h3>
+                  <h3 className={`${classes.cardHeading} ${classes.fontLimeLight} mb-0`}>No Response</h3>
                 </div>
               </div>
               <div className={classes.mainCard}>
@@ -173,7 +173,7 @@ function GuestList() {
                   aria-hidden="true"
                 />
                 <div className={classes.cardHeadingContainer}>
-                  <h3 className={`${classes.cardHeading} mb-0`}>Unsent</h3>
+                  <h3 className={`${classes.cardHeading} ${classes.fontLimeLight} mb-0`}>Unsent</h3>
                 </div>
               </div>
               <div className={classes.mainCard}>

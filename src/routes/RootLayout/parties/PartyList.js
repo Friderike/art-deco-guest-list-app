@@ -8,14 +8,13 @@ function PartyList() {
   return (
     <>
       <div className={`${classes.partyListContainer} d-flex flex-column `}>
-        <Header pageTitle={'Parties'} mainTitle={'Party List'}>
+        <Header mainTitle={'Party List'}>
           <div className={` ${classes.mainBtnContainer} `}>
-            <Link className={`${classes.mainButton} ${classes.guestListBtn}`} to="/guest-list">
+            <Link className={`${classes.mainButton} ${classes.guestListBtn} ${classes.my10}`} to="/guest-list">
               Guest List 
             </Link>
           </div>
         </Header>
-        <h2>Parties here</h2>
       </div>
     </>
   )

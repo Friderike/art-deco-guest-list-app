@@ -31,37 +31,39 @@ ul {
   z-index: 10;
   margin-bottom: -1px;
   position: relative;
+}
 
-  .cardHeadingContainer {
-    background-image: url("../assets/diamond-shape-bg.png");
-    background-repeat: no-repeat;
-    width: clamp(20.5rem, 77%, 21.5rem);
-    inset: 3.2rem 0 0.5rem;
-    position: absolute;
-    background-position: center;
-    background-size: contain;
-    margin: auto;
-    display: grid;
-    place-content: center;
-    padding: 2.3rem;
-      
-    .cardHeading {
-      font-family: 'Limelight', cursive;
-      font-size: 2rem;
-      background: $white;
-      border-radius: 2rem;
-      border: 1px solid $black;
-      padding: 0.5rem 2rem;
-      min-width: 18.5rem;
-      display: grid;
-      place-content: center;
-      white-space: nowrap;
-  
-      @media (max-width: 576px) {
-        font-size: 1.6rem;
-        min-width: 16.5rem;
-      }
-    }
+.cardHeadingContainer {
+  background-image: url("../assets/diamond-shape-bg.png");
+  background-repeat: no-repeat;
+  width: clamp(20.5rem, 77%, 21.5rem);
+  position: absolute;
+  background-position: center;
+  background-size: contain;
+  margin: auto;
+  display: grid;
+  place-content: center;
+  padding: 2.3rem;
+}
+
+.cardHeading {
+  font-size: 2rem;
+  background: $white;
+  border-radius: 2rem;
+  border: 1px solid $black;
+  padding: 0.5rem 2rem;
+  min-width: 18.5rem;
+  display: grid;
+  place-content: center;
+  white-space: nowrap;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+    min-width: 16.5rem;
+  }
+
+  &:is(.font18) {
+    font-size: 1.8rem;
   }
 }
 
@@ -79,6 +81,7 @@ ul {
   background: $paper;
   padding: 2rem;
   border: 1px solid $black;
+  position: relative
 }
 
 
@@ -89,6 +92,20 @@ ul {
 
 .mb20 {
   margin-bottom: 2rem;
+}
+
+.my10 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my20 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pt62 {
+  padding-top: 6.2rem;
 }
 
 .mainContainerOffset {

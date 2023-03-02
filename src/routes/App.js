@@ -16,10 +16,10 @@ function App() {
         <div className={classes.decoCornersTop}></div>
 
         <div className="d-flex align-items-center justify-content-center">
-          <button onClick={enterApp} className={`${classes.fontLimeLight} ${classes.linkButton} ${classes.font35} mr-4`}>
-            Enter
+          <button onClick={enterApp} className={`${classes.fontLimeLight} ${classes.linkButton} ${classes.font35}`}>
+            Enter 
+            <ArrowForwardIcon className="material-icons" style={{fontSize: "25px" }} />
           </button>
-          <ArrowForwardIcon className="material-icons" style={{ fontSize: "25px" }} />
         </div>
 
         <div className={classes.decoCornersBottom}> </div>

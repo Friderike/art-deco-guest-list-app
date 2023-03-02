@@ -3,4 +3,8 @@
 .sideBarContainer {
    width: min(8.8rem, 20%);
    background: #d5d5d5;
+
+   .sideBarNav {
+      height: 100%;
+   }
 }

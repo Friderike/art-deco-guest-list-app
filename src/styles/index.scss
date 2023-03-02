@@ -1,5 +1,5 @@
-@import './buttons';
-@import './variables';
+@import "./buttons";
+@import "./variables";
 
 * {
   box-sizing: border-box;
@@ -9,11 +9,21 @@
 
 html {
   font-size: 62.5%;
+
+  a {
+    text-decoration: unset;
+    color: unset;
+
+    &:hover {
+      text-decoration: unset;
+      color: unset;
+    }
+  }
 }
 
 :root {
   height: 100%;
-  font-family: 'Poiret One', cursive;
+  font-family: "Poiret One", cursive;
   line-height: 24px;
   font-weight: 400;
   font-synthesis: none;

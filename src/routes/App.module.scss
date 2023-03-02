@@ -1,0 +1,11 @@
+@import "../styles/ui.scss";
+
+.landingContainer {
+  display: grid;
+  place-content: center;
+  background: $paper;
+
+  &::before {
+    content: '';
+  }
+}

@@ -26,7 +26,6 @@ function GuestList() {
   function onCloseModal() {
     setModalVisible((modalIsVisible = false));
     navigate("/guest-list");
-    console.log(modalIsVisible);
   }
 
   function checkStatus() {

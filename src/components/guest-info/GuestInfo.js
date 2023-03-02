@@ -30,7 +30,6 @@ function GuestInfo({ name, address, contact, status, guests, id, showModal, clos
       )}
       
       <button className={classes.roundBtn} onClick={onToggleCard}>
-        {/* {isCardExpanded ? "Close" : "Expand"} */}
        <ExpandLessRoundedIcon className={`${isCardExpanded ? `${classes.arrowDown}` : `${classes.arrowUp}`} material-icons ${classes.caret}`} style={{fontSize: '25px'}}/>
       </button>
     </div>

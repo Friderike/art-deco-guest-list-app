@@ -17,8 +17,8 @@ function App() {
 
         <div className="d-flex align-items-center justify-content-center">
           <button onClick={enterApp} className={`${classes.fontLimeLight} ${classes.linkButton} ${classes.font35}`}>
-            Enter 
-            <ArrowForwardIcon className="material-icons" style={{fontSize: "25px" }} />
+            Enter
+            <ArrowForwardIcon className="material-icons" style={{ fontSize: "25px" }} />
           </button>
         </div>
 

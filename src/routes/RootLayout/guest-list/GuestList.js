@@ -50,16 +50,16 @@ function GuestList() {
       <>
         <div className={`${classes.invitationContainer} d-flex flex-column`}>
           <Header pageTitle={"Invitations"} mainTitle={'Miranda’s Midnight Masquerade'}>
-          
-          <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft} ${classes.my10}`}>
-            <Link className={`${classes.mainButton} `} to="/party-list">
-             Back to Parties
-            </Link>
-          </div>
-          <div className={`${classes.mainBtnContainer} ${classes.headerBtnRight} ${classes.my10}`}>
-            <button className={`${classes.mainButton} `} onClick={onOpenModal}>
-              Add Guest
-            </button>
+
+            <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft} ${classes.my10}`}>
+              <Link className={`${classes.mainButton} `} to="/party-list">
+                Back to Parties
+              </Link>
+            </div>
+            <div className={`${classes.mainBtnContainer} ${classes.headerBtnRight} ${classes.my10}`}>
+              <button className={`${classes.mainButton} `} onClick={onOpenModal}>
+                Add Guest
+              </button>
             </div>
           </Header>
 
@@ -81,20 +81,20 @@ function GuestList() {
               <div className={classes.mainCard}>
                 {attending
                   ? guestsInfo.map(
-                      (guest, index) =>
-                        guest.status === "Attending" && (
-                          <ul key={index}>
-                            <GuestInfo
-                              name={guest.name}
-                              address={guest.address}
-                              contact={guest.contact}
-                              status={guest.status}
-                              guests={guest.guests}
-                              id={guest.id}
-                            />
-                          </ul>
-                        )
-                    )
+                    (guest, index) =>
+                      guest.status === "Attending" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
+                  )
                   : noGuests}
               </div>
             </div>
@@ -115,20 +115,20 @@ function GuestList() {
               <div className={classes.mainCard}>
                 {notAttending
                   ? guestsInfo.map(
-                      (guest, index) =>
-                        guest.status === "Not Attending" && (
-                          <ul key={index}>
-                            <GuestInfo
-                              name={guest.name}
-                              address={guest.address}
-                              contact={guest.contact}
-                              status={guest.status}
-                              guests={guest.guests}
-                              id={guest.id}
-                            />
-                          </ul>
-                        )
-                    )
+                    (guest, index) =>
+                      guest.status === "Not Attending" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
+                  )
                   : noGuests}
               </div>
             </div>
@@ -147,20 +147,20 @@ function GuestList() {
               <div className={classes.mainCard}>
                 {noResponse
                   ? guestsInfo.map(
-                      (guest, index) =>
-                        guest.status === "No Response" && (
-                          <ul key={index}>
-                            <GuestInfo
-                              name={guest.name}
-                              address={guest.address}
-                              contact={guest.contact}
-                              status={guest.status}
-                              guests={guest.guests}
-                              id={guest.id}
-                            />
-                          </ul>
-                        )
-                    )
+                    (guest, index) =>
+                      guest.status === "No Response" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
+                  )
                   : noGuests}
               </div>
             </div>
@@ -179,20 +179,20 @@ function GuestList() {
               <div className={classes.mainCard}>
                 {unsent
                   ? guestsInfo.map(
-                      (guest, index) =>
-                        guest.status === "Unsent" && (
-                          <ul key={index}>
-                            <GuestInfo
-                              name={guest.name}
-                              address={guest.address}
-                              contact={guest.contact}
-                              status={guest.status}
-                              guests={guest.guests}
-                              id={guest.id}
-                            />
-                          </ul>
-                        )
-                    )
+                    (guest, index) =>
+                      guest.status === "Unsent" && (
+                        <ul key={index}>
+                          <GuestInfo
+                            name={guest.name}
+                            address={guest.address}
+                            contact={guest.contact}
+                            status={guest.status}
+                            guests={guest.guests}
+                            id={guest.id}
+                          />
+                        </ul>
+                      )
+                  )
                   : noGuests}
               </div>
             </div>

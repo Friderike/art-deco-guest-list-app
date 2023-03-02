@@ -10,16 +10,21 @@ import goodiesIcon from '../../assets/icons/goodies-icon.svg'
 import settingsIcon from '../../assets/icons/settings-icon.svg'
 import logoutIcon from '../../assets/icons/logout-icon.svg'
 
-function SideBar() {
+function SideBar({ sideBarTitle }) {
     const sideBarIcons = [dashBoardIcon, invitesIcon, bevviesIcon, softDrinksIcon, foodIcon, goodiesIcon, settingsIcon, logoutIcon]
 
     return (
         <>
-            <aside className={`${classes.sideBarContainer} ${classes.mobileOnly}`}>
+            <aside className={`${classes.sideBarContainer} ${classes.hiddenOnMobile}`}>
+
+                <div className={`${classes.sideBarTitle} ${classes.fontLimeLight} `}>
+                    <h3>{sideBarTitle}</h3>
+                </div>
+
                 <nav className={`${classes.sideBarNav} ${classes.pt62} pb-5`}>
-                    <ul className={`d-flex flex-column align-items-center justify-content-between h-100`}>
+                    <ul className={`d-flex flex-column align-items-center justify-content-between pt-5`}>
                         {sideBarIcons.map((icon, index) => (
-                            <li key={index}>
+                            <li key={index} className={classes.sideBarIcons}>
                                 {icon === logoutIcon ? <Link to='/'><img src={icon} alt="" /></Link> :
                                     <Link >
                                         <img src={icon} alt="" />

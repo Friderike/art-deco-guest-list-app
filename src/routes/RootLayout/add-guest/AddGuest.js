@@ -14,7 +14,7 @@ function AddGuest({ closeModal }) {
         >
           <div className={`d-flex flex-column`}>
             <label htmlFor="name">Add Guest Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter Name" />
+            <input type="text" id="name" name="name" placeholder="Enter Name" required />
           </div>
 
           <div className={`d-flex flex-column`}>
@@ -72,11 +72,10 @@ function AddGuest({ closeModal }) {
             <input type="radio" id="status" name="status" value="Unsent" />
           </div>
 
-          <div className={`d-flex justify-content-end`}></div>
-          <button className={`${classes.mainButton} mr-4`}>Save</button>
-          <button type="button" onClick={closeModal}>
-            Cancel
-          </button>
+          <div className={`d-flex justify-content-end`}>
+            <button type="button" onClick={closeModal} className={`${classes.linkButton} mr-3`}> Cancel</button>
+            <button className={`${classes.mainButton} mr-4`}>Save</button>
+          </div>
         </Form>
       </Modal>
     </>

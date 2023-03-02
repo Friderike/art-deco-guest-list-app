@@ -29,7 +29,7 @@ function PartyList() {
         <p >
           Please go to Guest List
         </p>
-        
+
         <section className={`${classes.gridCol12Cards} ${classes.mainContainerOffset} ${classes.pt62} d-f mb-5`}>
 
           <div className={`${classes.partyContainer}`}>

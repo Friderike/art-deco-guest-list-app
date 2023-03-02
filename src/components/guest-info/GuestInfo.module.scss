@@ -1,25 +1,22 @@
-@import '../../styles/ui.scss';
+@import "../../styles/ui.scss";
 
- ul {
-     &.guestCardList {
-        list-style: none;
-     }
-    }
+ul {
+  &.guestCardList {
+    list-style: none;
+  }
+}
 
 .roundBtn {
-   transition: 0.3s;
-   position: absolute;
-   left: -1.1rem;
+  transition: 0.3s;
+  position: absolute;
+  left: -1.1rem;
 
-   .caret.arrowDown {
-   transform: rotate(180deg);
-   transition: 0.5s;
+  .caret.arrowDown {
+    transform: rotate(180deg);
+    transition: 0.5s;
+  }
+  .caret.arrowUp {
+    transform: rotate(360deg);
+    transition: 0.5s;
+  }
 }
-   .caret.arrowUp {
-   transform: rotate(360deg);
-   transition: 0.5s;
-}
-}
-
-
-    

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172.94 176.49">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill: none;
+        stroke: #231f20;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-6 {
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-4 {
+        stroke-linecap: round;
+      }
+
+      .cls-2, .cls-3, .cls-6 {
+        stroke-linecap: square;
+      }
+
+      .cls-2, .cls-4, .cls-5, .cls-6 {
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-5, .cls-7 {
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <polyline class="cls-2" points="97.47 167.59 101.47 167.59 101.47 105.63 163.81 105.63"/>
+      <polyline class="cls-4" points="39.69 124.75 120.96 124.75 120.96 42.48"/>
+      <rect class="cls-5" x="120.79" y="124.57" width="37.59" height="37.59" transform="translate(279.16 286.74) rotate(180)"/>
+      <path class="cls-6" d="m163.81,51.13V1v104.63-54.5Z"/>
+      <path class="cls-4" d="m1,167.59h100.47H1Z"/>
+      <path class="cls-1" d="m140.58,89.7V23.08v122.09-55.47Z"/>
+      <path class="cls-3" d="m140.58,145.17H28.67h111.91Z"/>
+      <rect class="cls-7" x="159.3" y="162.85" width="13.14" height="13.14" transform="translate(331.73 338.84) rotate(180)"/>
+    </g>
+  </g>
+</svg>

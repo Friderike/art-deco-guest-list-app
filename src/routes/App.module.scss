@@ -2,10 +2,61 @@
 
 .landingContainer {
   display: grid;
-  place-content: center;
+ grid-template-columns: 1fr;
+ grid-template-areas: 
+ 'deco-top'
+ 'button'
+ 'deco-bottom';
+
   background: $paper;
 
-  &::before {
-    content: '';
+  .decoCornersTop {
+    &::before {
+      content: url("../assets/deco-corner-1_1.svg");
+      width: 19rem;
+      height: 6rem;
+      position: absolute;
+      inset: 2rem;
+    }
+
+    &::after {
+      content: url("../assets/deco-corner-2.svg");
+      width: 19rem;
+      height: 6rem;
+      position: absolute;
+      right: 2rem;
+      top: 15.4rem;
+      transform: scaley(-1);
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+  .decoCornersBottom {
+    width: 100%;
+    position: relative;
+    transform: scaleY(-1);
+    &::before {
+      content: url("../assets/deco-corner-1_1.svg");
+      width: 19rem;
+      height: 6rem;
+      position: absolute;
+      inset: 2rem;
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: url("../assets/deco-corner-2.svg");
+      width: 19rem;
+      height: 6rem;
+      position: absolute;
+      right: 2rem;
+      top: 15.3rem;
+      transform: scaleY(-1);
+    }
   }
 }

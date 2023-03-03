@@ -73,11 +73,25 @@
         margin-left: auto;
       }
     }
+
+    .mainBtnContainer {
+      justify-self: flex-end;
+      grid-area: btn-right;
+    }
+
+    .mainButton {
+      min-width: 10.6rem;
+      text-align: center;
+    }
   }
 
   .cardHeadingContainer {
-   position: relative;
-   margin-top: -2rem;
+    position: relative;
+    margin-top: -2rem;
   }
-
 }
+
+// @media (max-width: 767px) {
+//   .headerTopSection {
+//   }
+// }

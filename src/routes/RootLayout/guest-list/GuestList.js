@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate, Link } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import classes from "./GuestList.module.scss";
@@ -49,18 +49,12 @@ function GuestList() {
     (
       <>
         <div className={`${classes.invitationContainer} d-flex flex-column`}>
-          <Header pageTitle={"Invitations"} mainTitle={'Miranda’s Midnight Masquerade'}>
-
-            <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft} ${classes.my10}`}>
-              <Link className={`${classes.mainButton} `} to="/party-list">
-                Back to Parties
-              </Link>
-            </div>
-            <div className={`${classes.mainBtnContainer} ${classes.headerBtnRight} ${classes.my10}`}>
-              <button className={`${classes.mainButton} `} onClick={onOpenModal}>
-                Add Guest
-              </button>
-            </div>
+          <Header pageTitle={"Invitations"}
+            mainTitle={'Miranda’s Midnight Masquerade'}
+            btnLeft={'/party-list'}
+            btnLeftText={'Back to Parties'}
+            btnRight={onOpenModal}
+            btnRightText={'Add Guest'}>
           </Header>
 
           <section

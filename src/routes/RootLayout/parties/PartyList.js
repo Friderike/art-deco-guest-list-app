@@ -1,26 +1,24 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import invitationHeader from "../../../assets/invitations-subhead-arch.svg";
 import Header from '../../../components/header/Header'
 import classes from './PartyList.module.scss';
 
 function PartyList() {
+  const navigate = useNavigate();
+
+  function toGuestList() {
+    navigate('/guest-list')
+  }
 
   return (
     <>
       <div className={`${classes.partyListContainer} d-flex flex-column `}>
-        <Header mainTitle={'Party List'}>
-
-          <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft} ${classes.my10}`}>
-            <Link className={`${classes.mainButton} `} to="..">
-              Exit
-            </Link>
-          </div>
-          <div className={` ${classes.mainBtnContainer} `}>
-            <Link className={`${classes.mainButton} ${classes.guestListBtn} ${classes.my10}`} to="/guest-list">
-              Guest List
-            </Link>
-          </div>
+        <Header mainTitle={'Party List'}
+          btnLeft={'..'}
+          btnLeftText={'Exit'}
+          btnRight={toGuestList}
+          btnRightText={'Guest List'}>
         </Header>
 
         <p className={`${classes.font20} mt-4`}>

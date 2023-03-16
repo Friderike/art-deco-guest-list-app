@@ -9,6 +9,7 @@ import foodIcon from '../../assets/icons/food-icon.svg'
 import goodiesIcon from '../../assets/icons/goodies-icon.svg'
 import settingsIcon from '../../assets/icons/settings-icon.svg'
 import logoutIcon from '../../assets/icons/logout-icon.svg'
+import { Box } from '@mui/material';
 
 function SideBar({ sideBarTitle }) {
     const sideBarIcons = [dashBoardIcon, invitesIcon, bevviesIcon, softDrinksIcon, foodIcon, goodiesIcon, settingsIcon, logoutIcon]
@@ -17,12 +18,20 @@ function SideBar({ sideBarTitle }) {
         <>
             <aside className={`${classes.sideBarContainer} ${classes.hiddenOnMobile}`}>
 
-                <div className={`${classes.sideBarTitle} ${classes.fontLimeLight} `}>
-                    <h3>{sideBarTitle}</h3>
-                </div>
+                <Box className={classes.sideBarTitleContainer}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        p: 1,
+                        border: 2
+                    }}>
+                    <div className={`${classes.sideBarTitle} ${classes.fontLimeLight} `}>
+                        <h3>{sideBarTitle}</h3>
+                    </div>
+                </Box>
 
-                <nav className={`${classes.sideBarNav} ${classes.pt62} pb-5`}>
-                    <ul className={`d-flex flex-column align-items-center justify-content-between pt-5`}>
+                <nav className={`${classes.sideBarNav} ${classes.pt62}`}>
+                    <ul className={`d-flex flex-column align-items-center justify-content-between`}>
                         {sideBarIcons.map((icon, index) => (
                             <li key={index} className={classes.sideBarIcons}>
                                 {icon === logoutIcon ? <Link to='/'><img src={icon} alt="" /></Link> :
@@ -37,7 +46,6 @@ function SideBar({ sideBarTitle }) {
                 </nav>
             </aside>
         </>
-
     )
 };
 

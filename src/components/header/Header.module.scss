@@ -44,7 +44,7 @@
 
   .headerTopSection {
     background: $mid-taupe;
-    padding: 0 max(1.6rem, 2rem);
+    padding: 0 3.2rem;
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -72,6 +72,10 @@
         margin-right: auto;
         margin-left: auto;
       }
+    }
+
+    .backBtnContainer {
+      grid-area: btn-left;
     }
 
     .mainBtnContainer {

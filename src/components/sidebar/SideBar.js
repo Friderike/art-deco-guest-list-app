@@ -12,7 +12,14 @@ import logoutIcon from '../../assets/icons/logout-icon.svg'
 import { Box } from '@mui/material';
 
 function SideBar({ sideBarTitle }) {
-    const sideBarIcons = [dashBoardIcon, invitesIcon, bevviesIcon, softDrinksIcon, foodIcon, goodiesIcon, settingsIcon, logoutIcon]
+    const sideBarIcons = [{image : dashBoardIcon, alt: 'Dashboard', path: "/under-construction"}, 
+                        {image: invitesIcon, alt: 'Invites', path: "/under-construction"},
+                        {image: bevviesIcon, alt: 'Beverages', path: "/under-construction"},
+                        {image: softDrinksIcon, alt: 'Soft drinks', path: "/under-construction"},
+                        {image: foodIcon, alt: 'Food', path: "/under-construction"},
+                        {image: goodiesIcon, alt: 'Goodies', path: "/under-construction"},
+                        {image: settingsIcon, alt:'Setttings', path: "/under-construction"},
+                        {image: logoutIcon, alt: 'Logout', path: '/'}]
 
     return (
         <>
@@ -34,9 +41,9 @@ function SideBar({ sideBarTitle }) {
                     <ul className={`d-flex flex-column align-items-center justify-content-between`}>
                         {sideBarIcons.map((icon, index) => (
                             <li key={index} className={classes.sideBarIcons}>
-                                {icon === logoutIcon ? <Link to='/'><img src={icon} alt="" /></Link> :
-                                    <Link >
-                                        <img src={icon} alt="" />
+                                {
+                                    <Link to={icon.path}>
+                                        <img src={icon.image} alt={icon.alt} />
                                     </Link>
                                 }
                             </li>

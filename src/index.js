@@ -9,12 +9,14 @@ import RootLayout from "./routes/RootLayout/RootLayout";
 import PartyList from "./routes/RootLayout/parties/PartyList";
 import GuestList, { loader as guestInfoLoader, action as addGuestAction } from "./routes/RootLayout/guest-list/GuestList";
 import AddGuest  from './routes/RootLayout/add-guest/AddGuest'
+import UnderConstruction from "./routes/under-construction/UnderConstruction";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
+
   {
     path: "/",
     element: <RootLayout />,
@@ -37,6 +39,11 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/under-construction",
+    element: <UnderConstruction />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

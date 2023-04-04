@@ -9,17 +9,18 @@ import foodIcon from '../../assets/icons/food-icon.svg'
 import goodiesIcon from '../../assets/icons/goodies-icon.svg'
 import settingsIcon from '../../assets/icons/settings-icon.svg'
 import logoutIcon from '../../assets/icons/logout-icon.svg'
-import { Box } from '@mui/material';
+import { Box, Tooltip } from '@mui/material';
+import { fontSize, style } from '@mui/system';
 
 function SideBar({ sideBarTitle }) {
-    const sideBarIcons = [{image : dashBoardIcon, alt: 'Dashboard', path: "/under-construction"}, 
-                        {image: invitesIcon, alt: 'Invites', path: "/under-construction"},
-                        {image: bevviesIcon, alt: 'Beverages', path: "/under-construction"},
-                        {image: softDrinksIcon, alt: 'Soft drinks', path: "/under-construction"},
-                        {image: foodIcon, alt: 'Food', path: "/under-construction"},
-                        {image: goodiesIcon, alt: 'Goodies', path: "/under-construction"},
-                        {image: settingsIcon, alt:'Setttings', path: "/under-construction"},
-                        {image: logoutIcon, alt: 'Logout', path: '/'}]
+    const sideBarIcons = [{image : dashBoardIcon, alt: 'Dashboard', path: "/under-construction", tooltip: 'Dashboard'}, 
+                        {image: invitesIcon, alt: 'Invites', path: "/under-construction", tooltip: 'Invites'},
+                        {image: bevviesIcon, alt: 'Beverages', path: "/under-construction", tooltip: 'Beverages'},
+                        {image: softDrinksIcon, alt: 'Soft drinks', path: "/under-construction", tooltip: 'Soft Drinks'},
+                        {image: foodIcon, alt: 'Food', path: "/under-construction", tooltip: 'Food'},
+                        {image: goodiesIcon, alt: 'Goodies', path: "/under-construction", tooltip: 'Goodies'},
+                        {image: settingsIcon, alt:'Setttings', path: "/under-construction", tooltip: 'Settings'},
+                        {image: logoutIcon, alt: 'Logout', path: '/', tooltip: 'Logout'}]
 
     return (
         <>
@@ -42,9 +43,12 @@ function SideBar({ sideBarTitle }) {
                         {sideBarIcons.map((icon, index) => (
                             <li key={index} className={classes.sideBarIcons}>
                                 {
+                                    <Tooltip title={<p style={{fontSize: '12px', marginBottom: 0}}>{icon.tooltip} </p>} 
+                                             arrow > 
                                     <Link to={icon.path}>
-                                        <img src={icon.image} alt={icon.alt} />
+                                        <img  src={icon.image} alt={icon.alt} />
                                     </Link>
+                                    </Tooltip>
                                 }
                             </li>
                         ))

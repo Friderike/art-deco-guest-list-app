@@ -8,7 +8,8 @@ import "./routes/RootLayout/RootLayout";
 import RootLayout from "./routes/RootLayout/RootLayout";
 import PartyList from "./routes/RootLayout/parties/PartyList";
 import GuestList, { loader as guestInfoLoader, action as addGuestAction } from "./routes/RootLayout/guest-list/GuestList";
-import AddGuest  from './routes/RootLayout/add-guest/AddGuest'
+import AddGuest  from './routes/RootLayout/add-guest/AddGuest';
+import EditGuest from "./routes/RootLayout/guest-data/edit-guest/EditGuest";
 import UnderConstruction from "./routes/under-construction/UnderConstruction";
 
 const router = createBrowserRouter([
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
         path: "/party-list",
         element: <PartyList />,
       },
+
       {
         path: "/guest-list",
         element: <GuestList />,
@@ -35,6 +37,11 @@ const router = createBrowserRouter([
             path: "add-guest",
             element: <AddGuest />,
           },
+
+          {
+            path: "edit-guest",
+            element: <EditGuest />
+          }
         ],
       },
     ],

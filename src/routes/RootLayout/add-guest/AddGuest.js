@@ -10,7 +10,7 @@ function AddGuest({ closeModal }) {
       <Modal>
         <Form
           method="post"
-          className={`${classes.Form} d-flex flex-column align-items-center justify-content-center px-5 py-5`}
+          className={`d-flex flex-column align-items-center justify-content-center`}
         >
           <div className={`d-flex flex-column`}>
             <label htmlFor="name">Add Guest Name</label>
@@ -74,7 +74,7 @@ function AddGuest({ closeModal }) {
 
           <div className={`d-flex justify-content-end`}>
             <button type="button" onClick={closeModal} className={`${classes.linkButton} mr-3`}> Cancel</button>
-            <button className={`${classes.mainButton} mr-4`}>Save</button>
+            <button className={classes.mainButton}>Save</button>
           </div>
         </Form>
       </Modal>

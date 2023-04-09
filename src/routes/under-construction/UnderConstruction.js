@@ -11,8 +11,7 @@ function UnderConstruction() {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Box className={classes.underConstructionContent}
-                    sx={{
+                <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',

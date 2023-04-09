@@ -5,7 +5,7 @@ function Modal({ children }) {
 
   return (
     <>
-      <dialog open className={classes.modal}>
+      <dialog open className={`${classes.modal} ${classes.form}`}>
         {children}
       </dialog>
     </>

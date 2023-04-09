@@ -1,14 +1,19 @@
+@import '../../styles/ui.scss';
 
 .modal {
-    z-index: 100;
+    z-index: 1001;
     border: none;
     background: transparent;
     border-radius: 6px;
     margin-inline: auto;
     height: auto;
-    display: grid;
-    width: min(40%,30rem);
   }
+
+  .form {
+    background: $light-taupe;
+     width: max(40%,30rem);
+     padding: 5rem;    
+ }
   
 
 

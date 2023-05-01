@@ -94,10 +94,10 @@
     },
     {
       "name": "Friderike",
-      "address": "Street 5000",
+      "address": "street 666",
       "contact": "viiny@vinny.com",
       "status": "Not Attending",
-      "guests": "",
+      "guests": "4",
       "id": 13
     }
   ]

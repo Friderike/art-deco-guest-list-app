@@ -16,6 +16,15 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
         guests: guests
     };
   
+    // const guest = {
+    //     name: name,
+    //     guests: guests,
+    //     address: address,
+    //     contact: contact,
+    //     status: status
+    //   }
+     
+
     const [guestData, setGuestData] = useState(currentGuestData);
 
     const nameRef = useRef();
@@ -29,7 +38,7 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
         nameRef.current.value.trim().length > 0 ? currentGuestData.name = nameRef.current.value : alert('please enter a valid name');
         addressRef.current.value.trim().length > 0 ? currentGuestData.address = addressRef.current.value : alert('Please enter a valid address');
         contactRef.current.value.trim().length > 0 ? currentGuestData.contact = contactRef.current.value : alert('Please enter a valid email address');
-        guestRef.current.value = !currentGuestData.guests ? currentGuestData.guests = guestRef.current.value : currentGuestData.guests =guestRef.current.value ;
+        guestRef.current.value = !currentGuestData.guests ? currentGuestData.guests = guestRef.current.value : currentGuestData.guests = currentGuestData.guests;
 
      
             currentGuestData = {

@@ -52,6 +52,10 @@
 
     @include bottomDropShadow();
 
+    @media (max-width: 800px) {
+      height: 8rem;
+    }
+
     a {
       text-decoration: none;
     }
@@ -72,30 +76,43 @@
         margin-right: auto;
         margin-left: auto;
       }
+
+      @media (max-width: 800px) {
+        background-image: none;
+      }
     }
 
     .backBtnContainer {
       grid-area: btn-left;
+
+      @media (max-width: 800px) {
+        display: none;
+      }
     }
 
     .mainBtnContainer {
       justify-self: flex-end;
       grid-area: btn-right;
-    }
 
+      @media (max-width: 800px) {
+        display: none;
+      }
+    }
     .mainButton {
       min-width: 10.6rem;
       text-align: center;
     }
   }
-
-  .cardHeadingContainer {
-    position: relative;
-    margin-top: -2rem;
-  }
 }
 
-// @media (max-width: 767px) {
-//   .headerTopSection {
-//   }
-// }
+.backBtnContainerMobile,
+.mainBtnContainerMobile,
+.mobileButtons {
+  @media (min-width: 801px) {
+    display: none;
+  }
+}
+.cardHeadingContainer {
+  position: relative;
+  margin-top: -2rem;
+}

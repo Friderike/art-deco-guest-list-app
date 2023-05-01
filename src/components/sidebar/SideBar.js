@@ -10,7 +10,6 @@ import goodiesIcon from '../../assets/icons/goodies-icon.svg'
 import settingsIcon from '../../assets/icons/settings-icon.svg'
 import logoutIcon from '../../assets/icons/logout-icon.svg'
 import { Box, Tooltip } from '@mui/material';
-import { fontSize, style } from '@mui/system';
 
 function SideBar({ sideBarTitle }) {
     const sideBarIcons = [{image : dashBoardIcon, alt: 'Dashboard', path: "/under-construction", tooltip: 'Dashboard'}, 

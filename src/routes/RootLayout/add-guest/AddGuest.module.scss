@@ -1,2 +1,12 @@
 @import '../../../styles/ui.scss';
 
+.successText {
+    display: flex;
+    justify-content: center;
+    margin-top: 0 auto;
+}
+
+label {
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+}

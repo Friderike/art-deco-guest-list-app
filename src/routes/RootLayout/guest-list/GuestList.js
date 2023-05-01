@@ -7,10 +7,12 @@ import invitationHeader from "../../../assets/invitations-subhead-arch.svg";
 import Header from "../../../components/header/Header";
 import AddGuest from "../add-guest/AddGuest";
 
+
 function GuestList() {
   const navigate = useNavigate();
   const guestsInfo = useLoaderData();
-  let [modalIsVisible, setModalVisible] = useState(false);
+  // let guestsInfo = guestsInfo;
+  const [modalIsVisible, setModalVisible] = useState(false);
 
   let attending = false;
   let notAttending = false;
@@ -20,12 +22,11 @@ function GuestList() {
 
   function onOpenModal() {
     navigate("add-guest");
-    setModalVisible((modalIsVisible = true));
-    console.log(modalIsVisible);
+    setModalVisible((true));
   }
 
   function onCloseModal() {
-    setModalVisible((modalIsVisible = false));
+    setModalVisible((false));
     navigate("/guest-list");
   }
 
@@ -42,6 +43,7 @@ function GuestList() {
       }
       return guest;
     });
+
   }
 
   return (
@@ -72,6 +74,7 @@ function GuestList() {
                   <h3 className={`${classes.cardHeading} ${classes.fontLimeLight} mb-0`}>Attending</h3>
                 </div>
               </div>
+
               <div className={classes.mainCard}>
                 {attending
                   ? guestsInfo.map(
@@ -194,16 +197,16 @@ function GuestList() {
         </div>
 
         {modalIsVisible && (
-          <div className={`${classes.addGuestContainer} 'd-flex flex-column '`}>
+          <div className={'d-flex flex-column '}>
             <div className={classes.modalContainer}>
               <AddGuest closeModal={onCloseModal} />
             </div>
-          </div>
+          </div> 
         )}
         <div
           className={`${modalIsVisible && classes.backdrop}`}
-          onClick={onCloseModal}
-        ></div>
+          onClick={onCloseModal}>
+        </div>
       </>
     )
   );
@@ -212,8 +215,9 @@ function GuestList() {
 export default GuestList;
 
 export async function loader() {
-  const response = await fetch("http://localhost:8080/guest_info");
+  const response = await fetch("/guest_info");
   const resData = await response.json();
+  console.log('fetching')
   return resData;
 }
 
@@ -227,12 +231,13 @@ export async function action({ request }) {
     status: formData.get("status"),
   };
 
-  const response = await fetch("http://localhost:8080/guest_info", {
+  const response = await fetch("/guest_info", {
     method: "Post",
     body: JSON.stringify(enteredGuestInfo),
     headers: {
       "Content-Type": "application/json",
     },
   });
+  
   return response;
 }

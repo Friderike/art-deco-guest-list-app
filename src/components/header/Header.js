@@ -1,21 +1,36 @@
 import { Link } from "react-router-dom";
 import classes from "./Header.module.scss";
 
-function Header({ pageTitle, mainTitle, btnLeft, btnLeftText, btnRight, btnRightText }) {
-// smaller than475 np background image? If buttons position abs for mobile, background image needs hight! maybe change with to 100%
-  return (
-    <>
-      <header className={`${classes.mainHeader} d-flex flex-column w-100 `}> 
+function Header({
+  pageTitle,
+  mainTitle,
+  btnLeft,
+  btnLeftText,
+  btnRight,
+  btnRightText
+}) {
 
+  return (
+
+    <>
+      <header className={`${classes.mainHeader} d-flex flex-column w-100 `}>
         <div className={`${classes.headerTopSection}`}>
           <span className={classes.borderRT}></span>
           <span className={classes.borderLT}></span>
-          <div className={` ${classes.backBtnContainer} ${classes.headerBtnLeft} ${classes.my10}`}>
-            <Link className={`${classes.mainButton} `} to={btnLeft}>{btnLeftText}</Link>
+          <div
+            className={` ${classes.backBtnContainer} ${classes.headerBtnLeft} ${classes.my10}`}
+          >
+            <Link className={`${classes.mainButton} `} to={btnLeft}>
+              {btnLeftText}
+            </Link>
           </div>
 
           <div className={classes.mainTitleContainer}>
-            <h1 className={`text-center ${classes.mainTitleHeading} ${classes.cardHeading} ${classes.textStrokeBlack} ${classes.font18} mb-0`}>{mainTitle}</h1>
+            <h1
+              className={`text-center ${classes.mainTitleHeading} ${classes.cardHeading} ${classes.textStrokeBlack} ${classes.font18} mb-0`}
+            >
+              {mainTitle}
+            </h1>
           </div>
 
           <div className={` ${classes.mainBtnContainer} `}>
@@ -23,9 +38,30 @@ function Header({ pageTitle, mainTitle, btnLeft, btnLeftText, btnRight, btnRight
           </div>
         </div>
 
+        <div className={`w-100 d-flex align-items-center justify-content-between px-4 ${classes.mobileButtons}`}>
+          <div
+            className={` ${classes.backBtnContainerMobile} ${classes.headerBtnLeft} ${classes.my10}`}
+          >
+            <Link className={`${classes.mainButton} `} to={btnLeft}>
+              {btnLeftText}
+            </Link>
+          </div>
+          <div className={` ${classes.mainBtnContainerMobile} `}>
+            <button
+              className={`${classes.mainButton} ${classes.guestListBtn} ${classes.my10}`}
+              onClick={btnRight}
+            >
+              {btnRightText}
+            </button>
+          </div>
+        </div>
+
         {pageTitle && (
           <div className={classes.cardHeadingContainer}>
-            <h2 className={`${classes.cardHeading} ${classes.fontLimeLight} ${classes.headerSubTitle} text-center mb-0`}>{pageTitle}
+            <h2
+              className={`${classes.cardHeading} ${classes.fontLimeLight} ${classes.headerSubTitle} text-center mb-0`}
+            >
+              {pageTitle}
             </h2>
             <span className={classes.subHeaderDecoL3}></span>
           </div>

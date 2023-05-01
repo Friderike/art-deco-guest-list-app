@@ -12,6 +12,7 @@ function PartyList() {
   }
 
   return (
+    console.log('parties'),
     <>
       <div className={`${classes.partyListContainer} d-flex flex-column `}>
         <Header mainTitle={'Party List'}

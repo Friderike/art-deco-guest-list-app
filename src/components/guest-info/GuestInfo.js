@@ -3,15 +3,21 @@ import { useNavigate } from "react-router-dom";
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
 import { Box } from '@mui/material';
 
-// import Modal from "../modal/Modal";
 import EditGuest from "../../routes/RootLayout/guest-data/edit-guest/EditGuest";
 import classes from "./GuestInfo.module.scss";
 
-function GuestInfo({ name, address, contact, status, guests, id, showModal, closeModal }) {
+function GuestInfo({ name, address, contact, status, guests, id}) {
   const [isCardExpanded, setCardState] = useState(false);
-  let [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
+  // const guest = {
+  //   name: name,
+  //   guests: guests,
+  //   address: address,
+  //   contact: contact,
+  //   status: status
+  // }
+ 
   const navigate = useNavigate();
-  const [enteredName, setEnteredName] = useState(name);
 
   function onToggleCard() {
     setCardState((isCardExpanded) => !isCardExpanded);
@@ -19,26 +25,16 @@ function GuestInfo({ name, address, contact, status, guests, id, showModal, clos
 
   function onShowModal() {
     navigate('edit-guest')
-    setModalVisible(isModalVisible = true);
-    console.log(isModalVisible)
+    setModalVisible(true);
   }
 
   function onCloseModal() {
-    setModalVisible(isModalVisible = false);
-    navigate('/guest-list')
+    setModalVisible(false);
+    navigate('/guest-list');
   }
 
-  // function changeNameHandler(event) {
-  //   setEnteredName(event.target.value)
-  //   if (enteredName.trim().length > 0) {
-  //     console.log(enteredName)
-  //   } else {
-  //     alert('please enter name')
-  //   }
-
-  // }
-
   return (
+   
     <>
       <Box className={`${classes.detailCard} ${classes.mb20} `}
         sx={{
@@ -56,16 +52,17 @@ function GuestInfo({ name, address, contact, status, guests, id, showModal, clos
           <>
             <li>
               <p> Adress: {address}</p>
-              <p>Contact: {contact}</p>
+              <p> Contact: {contact}</p>
               <p> Status: {status} </p>
-              <p>id: {id}</p>
+              <p> id: {id}</p>
             </li>
 
-            <button className={classes.linkButton} onClick={onShowModal}> Edit Guest</button>
+           <button className={classes.linkButton} onClick={onShowModal}> Edit Guest</button>           
           </>
         )}
 
-        <button className={classes.roundBtn} onClick={onToggleCard}>
+        <button className={classes.roundBtn} 
+                onClick={onToggleCard}>
           <ExpandLessRoundedIcon className={`${isCardExpanded ? `${classes.arrowDown}` : `${classes.arrowUp}`} material-icons ${classes.caret}`} style={{ fontSize: '25px' }} />
         </button>
       </Box>
@@ -76,7 +73,14 @@ function GuestInfo({ name, address, contact, status, guests, id, showModal, clos
             display: 'flex',
             alignItems: 'end'
           }}>
-            <EditGuest closeModal={onCloseModal}></EditGuest>
+            <EditGuest closeModal={onCloseModal}
+                        name={name}
+                        address={address}
+                        contact={contact}
+                        status={status}
+                        guests={guests}
+                        id={id}>       
+             </EditGuest>
           </Box>
           <div
             className={`${isModalVisible && classes.backdrop}`}

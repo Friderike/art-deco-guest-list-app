@@ -1,8 +1,8 @@
 {
   "guest_info": [
     {
-      "name": "Frida",
-      "address": "Traveling",
+      "name": "Frida ",
+      "address": "Street 500",
       "contact": "frida@gmail.com",
       "status": "Attending",
       "guests": 2,
@@ -17,7 +17,7 @@
       "id": 2
     },
     {
-      "name": "Janelle",
+      "name": "Janelle S",
       "address": "Road 3",
       "contact": "jj@gmail.com",
       "status": "Not Attending",
@@ -25,9 +25,9 @@
       "id": 3
     },
     {
-      "name": "Julie",
+      "name": "Julie T",
       "address": "Road 4",
-      "contact": "julie@gmail.com",
+      "contact": "Unsent",
       "status": "No Response",
       "guests": 1,
       "id": 4
@@ -41,10 +41,8 @@
       "id": 5
     },
     {
-      "name": "Robin",
-      "guests": "4",
-      "contact": "roro@gmail.com",
-      "status": "No Response",
+      "name": "Roby",
+      "address": "street 666",
       "id": 6
     },
     {
@@ -52,30 +50,55 @@
       "guests": "6",
       "contact": "vinn@Vinny.com",
       "status": "Attending",
+      "id": 7
+    },
+    {
+      "name": "Roby ",
+      "address": "street 666",
+      "contact": "Unsent",
+      "status": "No Response",
+      "guests": "4",
       "id": 8
     },
     {
-      "name": "Bhumi",
+      "name": "Chris",
       "guests": "6",
-      "contact": "bhumi@b.com",
-      "status": "No Response",
+      "address": "Street 500",
+      "contact": "chris@chris.com",
+      "status": "Unsent",
+      "id": 9
+    },
+    {
+      "name": "Dan 5",
+      "address": "Street 500",
+      "contact": "dan@dan",
+      "status": "Attending",
+      "guests": "4",
       "id": 10
     },
     {
-      "name": "Vinny",
-      "guests": "6",
-      "address": "Here 500",
-      "contact": "vinn@Vinny.com",
+      "name": "Friderike Weber",
+      "address": "street 666",
+      "contact": "frida@frida.com",
       "status": "Not Attending",
+      "guests": "4",
       "id": 11
     },
     {
-      "name": "Vinny",
+      "name": "Bhumi Sh.",
+      "address": "Street 500",
+      "contact": "bhumi@bhumi.com",
+      "status": "Not Attending",
       "guests": "6",
-      "address": "here500",
-      "contact": "viiny@vinny.com",
-      "status": "No Response",
       "id": 12
+    },
+    {
+      "name": "Friderike",
+      "address": "Street 5000",
+      "contact": "viiny@vinny.com",
+      "status": "Not Attending",
+      "guests": "",
+      "id": 13
     }
   ]
 }

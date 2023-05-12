@@ -17,8 +17,8 @@ function RootLayout() {
     } else {
       return sideNavTitle;
     }
-
   }
+  // console.log(location) // create variable in function in every component and move the sidebar there / pass in the name of the variable? Or lift it to sidebar (useContext?)
   getSideBarTitle();
 
   return (

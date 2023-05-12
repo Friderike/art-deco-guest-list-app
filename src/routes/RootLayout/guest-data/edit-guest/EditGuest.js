@@ -5,25 +5,16 @@ import { Box } from '@mui/material';
 import classes from './EditGuest.module.scss';
 import Modal from '../../../../components/modal/Modal';
 
-
-function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
+function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) {
 
     let currentGuestData = {
         name: name,
         address: address,
         contact: contact,
         status: status,
-        guests: guests
+        guests: guests,
+        id: id
     };
-  
-    // const guest = {
-    //     name: name,
-    //     guests: guests,
-    //     address: address,
-    //     contact: contact,
-    //     status: status
-    //   }
-     
 
     const [guestData, setGuestData] = useState(currentGuestData);
 
@@ -34,39 +25,39 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
     const guestRef = useRef();
 
     async function changeGuestData() {
-        
+
         nameRef.current.value.trim().length > 0 ? currentGuestData.name = nameRef.current.value : alert('please enter a valid name');
         addressRef.current.value.trim().length > 0 ? currentGuestData.address = addressRef.current.value : alert('Please enter a valid address');
         contactRef.current.value.trim().length > 0 ? currentGuestData.contact = contactRef.current.value : alert('Please enter a valid email address');
-        guestRef.current.value = !currentGuestData.guests ? currentGuestData.guests = guestRef.current.value : currentGuestData.guests = currentGuestData.guests;
+        !isNaN(parseInt(guestRef.current.value)) ? currentGuestData.guests = guestRef.current.value : alert('Guests value must be a number');
 
-     
-            currentGuestData = {
-            name: currentGuestData.name,
-            address: currentGuestData.address,
-            contact: currentGuestData.contact,
-            status: currentGuestData.status,
-            guests: currentGuestData.guests
-        }
+        console.log(nameRef.current.value)
+        console.log('mounting');
 
-        // console.log('data:', currentGuestData);
-    
-        const responseData = await fetch(`/guest_info/${id}`, {
+        onCloseModal();
+
+        setNewGuestData();
+    };
+
+  async function setNewGuestData() {
+        console.log(currentGuestData.guests, parseInt(guestRef.current.value))
+        setGuestData(currentGuestData)
+
+        const responseData = await fetch(`/guest_info/${currentGuestData.id}`, {
             method: "Put",
-            body: JSON.stringify(currentGuestData),
+            body: JSON.stringify(guestData),
             headers: {
                 "Content-Type": "application/json"
             }
         })
-        setGuestData(currentGuestData);
-        // console.log('mounting');
-        closeModal();
-
+        console.log('mounting');
+        onCloseModal();   
+        
         return responseData;
     }
 
     return (
-        console.log('ID:', id),
+        console.log('ID: from EG', currentGuestData.id, guestData.name),
         <>
             <Modal >
                 <Form method="put">
@@ -75,7 +66,6 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            // USE THE MODALCONTAINER FROM GUESTLIST AS GLOBAL HERE?
                         }}>
                             <label htmlFor="name"> Edit Name </label>
                             <input
@@ -84,7 +74,7 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
                                 id="name"
                                 ref={nameRef}
                                 placeholder={guestData.name}
-                                defaultValue ={currentGuestData.name}
+                                defaultValue={guestData.name}
                             />
 
                             <label htmlFor="guests"> Edit Number Of Guests </label>
@@ -93,8 +83,8 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
                                 name="guests"
                                 id="guests"
                                 ref={guestRef}
-                                placeholder={guests}
-                                defaultValue ={currentGuestData.guest}
+                                placeholder={guestData.guests}
+                                defaultValue={guestData.guests}
                             />
 
                             <label htmlFor="address"> Edit Address </label>
@@ -104,7 +94,7 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
                                 id="address"
                                 ref={addressRef}
                                 placeholder={address}
-                                defaultValue ={currentGuestData.address}
+                                defaultValue={guestData.address}
                             />
 
                             <label htmlFor="email"> Edit Email Address </label>
@@ -114,11 +104,10 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
                                 id="email"
                                 ref={contactRef}
                                 placeholder={contact}
-                                defaultValue ={currentGuestData.contact}
+                                defaultValue={guestData.contact}
                             />
 
-
-<div className={`d-flex  flex-column align-items-center  flex-md-row mt-4`}>
+                            <div className={`d-flex  flex-column align-items-center  flex-md-row mt-4`}>
                                 <div className="d-flex flex-column justify-content-start align-items-center" >
                                     <Box sx={{
                                         display: 'flex',
@@ -170,7 +159,6 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
                                             value="No Response"
                                             ref={statusRef}
                                         />
-
                                     </Box>
 
                                     <Box sx={{
@@ -199,13 +187,14 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id }) {
                         alignItems: 'center',
                         mt: 2
                     }}>
-                        <button onClick={closeModal}
+                        <button onClick={onCloseModal}
                             className={`${classes.linkButton} ${classes.mr2}`}
                         >
                             Cancel
                         </button>
                         <button type='button' onClick={changeGuestData} className={classes.mainButton}>
-                        <a href='/guest-list'>Save</a></button>
+                            Save
+                        </button>
                     </Box>
                 </Form>
             </Modal>

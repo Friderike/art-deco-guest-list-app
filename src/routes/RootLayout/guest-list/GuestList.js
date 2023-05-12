@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Box } from "@mui/material";
 
 import classes from "./GuestList.module.scss";
 import GuestInfo from "../../../components/guest-info/GuestInfo";
@@ -7,13 +8,12 @@ import invitationHeader from "../../../assets/invitations-subhead-arch.svg";
 import Header from "../../../components/header/Header";
 import AddGuest from "../add-guest/AddGuest";
 
-
 function GuestList() {
-  const navigate = useNavigate();
-  const guestsInfo = useLoaderData();
-  // let guestsInfo = guestsInfo;
-  const [modalIsVisible, setModalVisible] = useState(false);
 
+  const navigate = useNavigate();
+  const guestsInfoData = useLoaderData();
+  let guestsInfo = guestsInfoData;
+  const [modalIsVisible, setModalVisible] = useState(false);
   let attending = false;
   let notAttending = false;
   let noResponse = false;
@@ -29,7 +29,9 @@ function GuestList() {
     setModalVisible((false));
     navigate("/guest-list");
   }
-
+  // function  changeGuestData(){
+  //   setGuestInfo([guestsInfo])
+  // }
   function checkStatus() {
     guestsInfo.map((guest) => {
       if (guest.status === "Attending") {
@@ -45,6 +47,7 @@ function GuestList() {
     });
 
   }
+
 
   return (
     checkStatus(),
@@ -82,12 +85,8 @@ function GuestList() {
                       guest.status === "Attending" && (
                         <ul key={index}>
                           <GuestInfo
-                            name={guest.name}
-                            address={guest.address}
-                            contact={guest.contact}
-                            status={guest.status}
-                            guests={guest.guests}
-                            id={guest.id}
+                            guest={guest}
+                            onCloseModal={onCloseModal}
                           />
                         </ul>
                       )
@@ -116,12 +115,7 @@ function GuestList() {
                       guest.status === "Not Attending" && (
                         <ul key={index}>
                           <GuestInfo
-                            name={guest.name}
-                            address={guest.address}
-                            contact={guest.contact}
-                            status={guest.status}
-                            guests={guest.guests}
-                            id={guest.id}
+                            guest={guest}
                           />
                         </ul>
                       )
@@ -148,12 +142,7 @@ function GuestList() {
                       guest.status === "No Response" && (
                         <ul key={index}>
                           <GuestInfo
-                            name={guest.name}
-                            address={guest.address}
-                            contact={guest.contact}
-                            status={guest.status}
-                            guests={guest.guests}
-                            id={guest.id}
+                            guest={guest}
                           />
                         </ul>
                       )
@@ -180,12 +169,7 @@ function GuestList() {
                       guest.status === "Unsent" && (
                         <ul key={index}>
                           <GuestInfo
-                            name={guest.name}
-                            address={guest.address}
-                            contact={guest.contact}
-                            status={guest.status}
-                            guests={guest.guests}
-                            id={guest.id}
+                            guest={guest}
                           />
                         </ul>
                       )
@@ -201,7 +185,7 @@ function GuestList() {
             <div className={classes.modalContainer}>
               <AddGuest closeModal={onCloseModal} />
             </div>
-          </div> 
+          </div>
         )}
         <div
           className={`${modalIsVisible && classes.backdrop}`}
@@ -238,6 +222,6 @@ export async function action({ request }) {
       "Content-Type": "application/json",
     },
   });
-  
+
   return response;
 }

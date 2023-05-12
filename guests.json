@@ -1,15 +1,15 @@
 {
   "guest_info": [
     {
-      "name": "Frida ",
-      "address": "Street 500",
-      "contact": "frida@gmail.com",
+      "name": "Frida Bert",
+      "address": "Street 5000",
+      "contact": "viny@viny.com",
       "status": "Attending",
-      "guests": 2,
+      "guests": "4",
       "id": 1
     },
     {
-      "name": "Chris",
+      "name": "Chris ",
       "address": "Road 2",
       "contact": "chris@gmail.com",
       "status": "Attending",
@@ -27,7 +27,7 @@
     {
       "name": "Julie T",
       "address": "Road 4",
-      "contact": "Unsent",
+      "contact": "jj@gmail.com",
       "status": "No Response",
       "guests": 1,
       "id": 4
@@ -43,19 +43,22 @@
     {
       "name": "Roby",
       "address": "street 666",
+      "contact": "vinn@Vinny.com",
+      "status": "Attending",
       "id": 6
     },
     {
-      "name": "Vincent",
-      "guests": "6",
+      "name": "Vincente",
+      "address": "street 666",
       "contact": "vinn@Vinny.com",
       "status": "Attending",
+      "guests": "6",
       "id": 7
     },
     {
       "name": "Roby ",
-      "address": "street 666",
-      "contact": "Unsent",
+      "address": "Street 500",
+      "contact": "viny@viny.com",
       "status": "No Response",
       "guests": "4",
       "id": 8
@@ -99,6 +102,14 @@
       "status": "Not Attending",
       "guests": "4",
       "id": 13
+    },
+    {
+      "name": "Dan ",
+      "address": "street 666",
+      "contact": "chris@chris.com",
+      "status": "No Response",
+      "guests": "5",
+      "id": 14
     }
   ]
 }

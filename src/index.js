@@ -39,7 +39,7 @@ const router = createBrowserRouter([
           },
 
           {
-            path: "edit-guest",
+            path: "edit-guest/:id",
             element: <EditGuest />
           }
         ],

@@ -30,8 +30,9 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
         addressRef.current.value.trim().length > 0 ? currentGuestData.address = addressRef.current.value : alert('Please enter a valid address');
         contactRef.current.value.trim().length > 0 ? currentGuestData.contact = contactRef.current.value : alert('Please enter a valid email address');
         !isNaN(parseInt(guestRef.current.value)) ? currentGuestData.guests = guestRef.current.value : alert('Guests value must be a number');
+        // currentGuestData.status = statusRef.current.value;
 
-        console.log(nameRef.current.value)
+        console.log(statusRef.current.value, nameRef.current.value, guestData.status)
         console.log('mounting');
 
         onCloseModal();
@@ -121,8 +122,9 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                             type="radio"
                                             id="status"
                                             name="status"
-                                            value="Attending"
+                                            // value="Attending"
                                             ref={statusRef}
+                                            defaultValue={guestData.status}
                                         />
                                     </Box>
 
@@ -173,7 +175,7 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                             id="status"
                                             name="status"
                                             value="Unsent"
-                                            ref={statusRef}
+                                            // ref={statusRef}
                                         />
                                     </Box>
                                 </div>

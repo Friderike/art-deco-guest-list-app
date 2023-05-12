@@ -1,11 +1,11 @@
 {
   "guest_info": [
     {
-      "name": "Frida Bert",
-      "address": "Street 5000",
-      "contact": "viny@viny.com",
+      "name": "Frida Weber",
+      "address": "Street 666",
+      "contact": "frida@frida.com",
       "status": "Attending",
-      "guests": "4",
+      "guests": "6",
       "id": 1
     },
     {
@@ -13,7 +13,7 @@
       "address": "Road 2",
       "contact": "chris@gmail.com",
       "status": "Attending",
-      "guests": 3,
+      "guests": "4",
       "id": 2
     },
     {
@@ -44,7 +44,8 @@
       "name": "Roby",
       "address": "street 666",
       "contact": "vinn@Vinny.com",
-      "status": "Attending",
+      "status": "Unsent",
+      "guests": "4",
       "id": 6
     },
     {
@@ -83,7 +84,7 @@
       "name": "Friderike Weber",
       "address": "street 666",
       "contact": "frida@frida.com",
-      "status": "Not Attending",
+      "status": "Unsent",
       "guests": "4",
       "id": 11
     },

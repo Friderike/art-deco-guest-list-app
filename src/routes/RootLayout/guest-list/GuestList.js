@@ -116,6 +116,7 @@ function GuestList() {
                         <ul key={index}>
                           <GuestInfo
                             guest={guest}
+                            onCloseModal={onCloseModal}
                           />
                         </ul>
                       )
@@ -143,6 +144,7 @@ function GuestList() {
                         <ul key={index}>
                           <GuestInfo
                             guest={guest}
+                            onCloseModal={onCloseModal}
                           />
                         </ul>
                       )
@@ -170,6 +172,7 @@ function GuestList() {
                         <ul key={index}>
                           <GuestInfo
                             guest={guest}
+                            onCloseModal={onCloseModal}
                           />
                         </ul>
                       )

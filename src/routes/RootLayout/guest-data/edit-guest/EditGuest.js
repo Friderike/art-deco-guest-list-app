@@ -15,24 +15,24 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
         guests: guests,
         id: id
     };
-
+    
     const [guestData, setGuestData] = useState(currentGuestData);
-
     const nameRef = useRef();
     const addressRef = useRef();
     const contactRef = useRef();
-    const statusRef = useRef();
+    // const statusRef = useRef();
     const guestRef = useRef();
+    
+    const selectStatus = (e) => { console.log(currentGuestData.status = e.currentTarget.value) }
 
     async function changeGuestData() {
 
         nameRef.current.value.trim().length > 0 ? currentGuestData.name = nameRef.current.value : alert('please enter a valid name');
         addressRef.current.value.trim().length > 0 ? currentGuestData.address = addressRef.current.value : alert('Please enter a valid address');
         contactRef.current.value.trim().length > 0 ? currentGuestData.contact = contactRef.current.value : alert('Please enter a valid email address');
-        !isNaN(parseInt(guestRef.current.value)) ? currentGuestData.guests = guestRef.current.value : alert('Guests value must be a number');
-        // currentGuestData.status = statusRef.current.value;
+        !isNaN(guestRef.current.value) ? currentGuestData.guests = guestRef.current.value : alert('Guests value must be a number');
 
-        console.log(statusRef.current.value, nameRef.current.value, guestData.status)
+        console.log( nameRef.current.value, guestData.status)
         console.log('mounting');
 
         onCloseModal();
@@ -117,14 +117,15 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                         alignItems: 'center',
                                         width: '100%'
                                     }}>
-                                        <label htmlFor="status">Attending</label>
+                                        <label htmlFor="attending">Attending</label>
                                         <input
                                             type="radio"
-                                            id="status"
+                                            id="attending"
                                             name="status"
-                                            // value="Attending"
-                                            ref={statusRef}
-                                            defaultValue={guestData.status}
+                                            value="Attending"
+                                            // ref={statusRef}
+                                            defaultChecked={guestData.status === 'Attending'}
+                                            onChange={selectStatus}
                                         />
                                     </Box>
 
@@ -135,13 +136,15 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                         alignItems: 'center',
                                         width: '100%'
                                     }}>
-                                        <label htmlFor="status">Not Attening</label>
+                                        <label htmlFor="not-attending">Not Attening</label>
                                         <input
                                             type="radio"
-                                            id="status"
+                                            id="not-attending"
                                             name="status"
                                             value="Not Attending"
-                                            ref={statusRef}
+                                            // ref={statusRef}
+                                            defaultChecked={guestData.status === 'Not Attending'}
+                                            onChange={selectStatus}
                                         />
                                     </Box>
                                 </div>
@@ -154,12 +157,14 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                         alignItems: 'center',
                                         width: '100%'
                                     }}>
-                                        <label htmlFor="status">No Response</label>
+                                        <label htmlFor="no-response">No Response</label>
                                         <input type="radio"
-                                            id="status"
+                                            id="no-response"
                                             name="status"
                                             value="No Response"
-                                            ref={statusRef}
+                                            // ref={statusRef}
+                                            defaultChecked={guestData.status === 'No Response'}
+                                            onChange={selectStatus}
                                         />
                                     </Box>
 
@@ -170,12 +175,14 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                         alignItems: 'center',
                                         width: '100%'
                                     }}>
-                                        <label htmlFor="status">Unsent</label>
+                                        <label htmlFor="unsent">Unsent</label>
                                         <input type="radio"
-                                            id="status"
+                                            id="unsent"
                                             name="status"
                                             value="Unsent"
                                             // ref={statusRef}
+                                            defaultChecked={guestData.status === 'Unsent'}
+                                            onChange={selectStatus}
                                         />
                                     </Box>
                                 </div>

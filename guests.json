@@ -1,11 +1,11 @@
 {
   "guest_info": [
     {
-      "name": "Frida Weber",
+      "name": "Frida Bert",
       "address": "Street 666",
       "contact": "frida@frida.com",
       "status": "Attending",
-      "guests": "6",
+      "guests": "4",
       "id": 1
     },
     {

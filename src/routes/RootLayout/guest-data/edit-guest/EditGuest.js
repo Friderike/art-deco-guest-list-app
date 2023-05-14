@@ -20,7 +20,6 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
     const nameRef = useRef();
     const addressRef = useRef();
     const contactRef = useRef();
-    // const statusRef = useRef();
     const guestRef = useRef();
     
     const selectStatus = (e) => { console.log(currentGuestData.status = e.currentTarget.value) }
@@ -123,7 +122,6 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                             id="attending"
                                             name="status"
                                             value="Attending"
-                                            // ref={statusRef}
                                             defaultChecked={guestData.status === 'Attending'}
                                             onChange={selectStatus}
                                         />
@@ -142,7 +140,6 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                             id="not-attending"
                                             name="status"
                                             value="Not Attending"
-                                            // ref={statusRef}
                                             defaultChecked={guestData.status === 'Not Attending'}
                                             onChange={selectStatus}
                                         />
@@ -162,7 +159,6 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                             id="no-response"
                                             name="status"
                                             value="No Response"
-                                            // ref={statusRef}
                                             defaultChecked={guestData.status === 'No Response'}
                                             onChange={selectStatus}
                                         />
@@ -180,7 +176,6 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                                             id="unsent"
                                             name="status"
                                             value="Unsent"
-                                            // ref={statusRef}
                                             defaultChecked={guestData.status === 'Unsent'}
                                             onChange={selectStatus}
                                         />

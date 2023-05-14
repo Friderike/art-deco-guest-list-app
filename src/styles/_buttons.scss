@@ -58,7 +58,10 @@
 }
 
 .squareButton {
-  border: 1px solid $line-brown;
-  background: $button-taupe;
-  padding: 0.3rem 1rem;
+  width: fit-content;
+  color: $white;
+  background-color: $bg-brown;
+  border: 1.5px solid $line-brown;
+  padding: 0.2rem 1rem;
+  font-weight: 700;
 }

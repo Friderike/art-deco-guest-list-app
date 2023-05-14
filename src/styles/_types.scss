@@ -1,5 +1,14 @@
+p {
+    font-size: 1.3rem;
+    line-height: 1.1;
+}
+
 .fontLimeLight {
     font-family: 'Limelight', cursive;
+}
+
+.fontQuattroCento {
+    font-family: 'Quattrocento', ;
 }
 
 .textStrokeWhite {
@@ -13,6 +22,9 @@
 
 //******* font sizes *******
 
+.font12 {
+    font-size: 1.2rem;
+}
 .font14 {
     font-size: 1.4rem;
 }
@@ -30,4 +42,12 @@
 }
 .font35 {
     font-size: 3.5rem;
+}
+
+//********* TITLES ***********
+//Card-heading / Title in UI scss
+
+.title1Blk {
+    font-size: 1.6rem;
+    -webkit-text-stroke: 1px $black;
 }

@@ -35,7 +35,7 @@ function GuestInfo({ guest, onCloseModal}) {
           justifyContent: 'center'
 
         }}>
-        <h3 className="d-flex justify-content-between">
+        <h3 className={`${classes.title1Blk} ${classes.mb6} d-flex justify-content-between`}>
           {guest.name}
           <span> {guest.guests} Guests</span>
         </h3>
@@ -43,13 +43,13 @@ function GuestInfo({ guest, onCloseModal}) {
         {isCardExpanded && (
           <>
             <li>
-              <p> Adress: {guest.address}</p>
-              <p> Contact: {guest.contact}</p>
-              <p> Status: {guest.status} </p>
-              <p> id: {guest.id}</p>
+              <p className={`${classes.mb4}`}> Adress: {guest.address}</p>
+              <p className={`${classes.mb4}`}> Contact: {guest.contact}</p>
+              <p className={`${classes.mb4}`}> Status: {guest.status} </p>
+              <p className={`${classes.mb4}`}> id: {guest.id}</p>
             </li>
 
-           <button className={classes.linkButton} onClick={onShowModal}> Edit Guest</button>           
+           <button className={`${classes.fontQuattroCento} ${classes.squareButton} ${classes.font12}`} onClick={onShowModal}> Edit Guest</button>           
           </>
         )}
 

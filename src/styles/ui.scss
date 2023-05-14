@@ -12,7 +12,7 @@ ul {
 
 .gridCol12Cards {
   display: grid;
-  width: min(100%, 120.68rem);
+  width: min(100%, 126.7rem);
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   justify-items: center;
   column-gap: 4rem;
@@ -86,6 +86,8 @@ input.customInput {
   padding: 2rem;
   border: 1px solid $black;
   position: relative;
+
+  @include detailCardBoxShadow()
 }
 
 //******* spacing *********
@@ -97,6 +99,13 @@ input.customInput {
   margin-left: auto;
 }
 
+.mb4 {
+  margin-bottom: 0.4rem;
+}
+
+.mb6 {
+  margin-bottom: 0.6rem;
+}
 .mb20 {
   margin-bottom: 2rem;
 }

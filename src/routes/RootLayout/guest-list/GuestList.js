@@ -28,10 +28,9 @@ function GuestList() {
   function onCloseModal() {
     setModalVisible((false));
     navigate("/guest-list");
+    console.log('FROM GLIST')
   }
-  // function  changeGuestData(){
-  //   setGuestInfo([guestsInfo])
-  // }
+ 
   function checkStatus() {
     guestsInfo.map((guest) => {
       if (guest.status === "Attending") {

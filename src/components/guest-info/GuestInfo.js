@@ -23,6 +23,7 @@ function GuestInfo({ guest, onCloseModal}) {
   function closeModal() {
     onCloseModal();
     setModalVisible(false)
+    console.log('FROM GINFO')
   }
 
   return (
@@ -65,7 +66,7 @@ function GuestInfo({ guest, onCloseModal}) {
             display: 'flex',
             alignItems: 'end'
           }}>
-            <EditGuest  onCloseModal={closeModal}           
+            <EditGuest  closeModal={closeModal}           
                         name={guest.name}
                         address={guest.address}
                         contact={guest.contact}

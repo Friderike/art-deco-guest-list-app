@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import classes from './EditGuest.module.scss';
 import Modal from '../../../../components/modal/Modal';
 
-function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) {
+function EditGuest({ closeModal, name, address, contact, status, guests, id}) {
 
     let currentGuestData = {
         name: name,
@@ -15,7 +15,7 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
         guests: guests,
         id: id
     };
-    
+  
     const [guestData, setGuestData] = useState(currentGuestData);
     const nameRef = useRef();
     const addressRef = useRef();
@@ -24,36 +24,33 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
     
     const selectStatus = (e) => { console.log(currentGuestData.status = e.currentTarget.value) }
 
-    async function changeGuestData() {
+    function changeGuestData() {
 
         nameRef.current.value.trim().length > 0 ? currentGuestData.name = nameRef.current.value : alert('please enter a valid name');
         addressRef.current.value.trim().length > 0 ? currentGuestData.address = addressRef.current.value : alert('Please enter a valid address');
         contactRef.current.value.trim().length > 0 ? currentGuestData.contact = contactRef.current.value : alert('Please enter a valid email address');
         !isNaN(guestRef.current.value) ? currentGuestData.guests = guestRef.current.value : alert('Guests value must be a number');
-
+        setGuestData(currentGuestData)
         console.log( nameRef.current.value, guestData.status)
         console.log('mounting');
-
-        onCloseModal();
-
+        
         setNewGuestData();
+        closeModal();      
     };
 
   async function setNewGuestData() {
         console.log(currentGuestData.guests, parseInt(guestRef.current.value))
-        setGuestData(currentGuestData)
 
-        const responseData = await fetch(`/guest_info/${currentGuestData.id}`, {
+   
+        await fetch(`/guest_info/${currentGuestData.id}`, {
             method: "Put",
             body: JSON.stringify(guestData),
             headers: {
                 "Content-Type": "application/json"
             }
-        })
-        console.log('mounting');
-        onCloseModal();   
-        
-        return responseData;
+    })
+        closeModal(); 
+        console.log('closing');       
     }
 
     return (
@@ -191,7 +188,7 @@ function EditGuest({ onCloseModal, name, address, contact, status, guests, id}) 
                         alignItems: 'center',
                         mt: 2
                     }}>
-                        <button onClick={onCloseModal}
+                        <button onClick={closeModal}
                             className={`${classes.linkButton} ${classes.mr2}`}
                         >
                             Cancel

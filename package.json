@@ -2,7 +2,7 @@
   "name": "guest-list-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://json-server-indol.vercel.app",
+  "proxy": "https://json-server-indol.vercel.app/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",

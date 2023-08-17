@@ -201,7 +201,7 @@ function GuestList() {
 export default GuestList;
 
 export async function loader() {
-  const response = await fetch("/guest_info");
+  const response = await fetch("http://localhost:8000/guest_info");
   const resData = await response.json();
   console.log('fetching')
   return resData;

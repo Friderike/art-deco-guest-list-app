@@ -42,7 +42,7 @@ function EditGuest({ closeModal, name, address, contact, status, guests, id}) {
         console.log(currentGuestData.guests, parseInt(guestRef.current.value))
 
    
-        await fetch(`http://localhost:8000/guest_info/${currentGuestData.id}`, {
+        await fetch(`https://json-server-indol.vercel.app/guest_info/${currentGuestData.id}`, {
             method: "Put",
             body: JSON.stringify(guestData),
             headers: {

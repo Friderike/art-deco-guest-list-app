@@ -201,7 +201,7 @@ function GuestList() {
 export default GuestList;
 
 export async function loader() {
-  const response = await fetch("guest_info");
+  const response = await fetch("https://json-server-indol.vercel.app/guest_info");
   const resData = await response.json();
   console.log('fetching')
   return resData;

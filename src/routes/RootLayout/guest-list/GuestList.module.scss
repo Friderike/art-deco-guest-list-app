@@ -1,37 +1,14 @@
-@import "../../../styles/ui.scss";
+@use '../../../styles/indexx';
 
 .invitationContainer {
-  background: $light-taupe;
+  background: indexx.$light-taupe;
   width: 100%;
   isolation: isolate;
   height: 100%;
 
   .mainContainerOffset {
     padding-top: 5rem;
-  }
-
-  .guestContainer {
-    width: 100%;
-    max-width: 29rem;
-    padding-top: 1rem;
-    transition: 0.4s;
-
-    @media (max-width: 576px) {
-      width: min(26rem, 100%);
-    }
-
-    .cardHeadingContainer {
-      inset: 3.2rem 0 0.5rem;
-    }
-
-    &:hover {
-      // transform: scale3d(1.01, 1.01, 1.01); //// need to find out how to remove that for edit guest open => breaking the desing
-      z-index: 1000;
-      box-shadow: 0px 0px 20px rgba(0,0,0, 0.3);
-      // border-radius: 2rem;   
-      background: $mid-taupe;
-    }
-  }
+  } 
 }
 
 .modalContainer {
@@ -43,10 +20,33 @@
   place-items: center;
 
   .Form {
-    background: $light-taupe;
+    background: indexx.$light-taupe;
     &::before {
       content: "";
     }
+  }
+}
+
+.guestContainer {
+  width: 100%;
+  max-width: 29rem;
+  padding-top: 1rem;
+  transition: 0.4s;
+
+  @media (max-width: 576px) {
+    width: min(26rem, 100%);
+  }
+
+  .cardHeadingContainer {
+    inset: 3.2rem 0 0.5rem;
+  }
+
+  &:hover {
+    // transform: scale3d(1.01, 1.01, 1.01); //// need to find out how to remove that for edit guest open => breaking the desing
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgba(0,0,0, 0.3);
+    // border-radius: 2rem;   
+    background: indexx.$mid-taupe;
   }
 }
 

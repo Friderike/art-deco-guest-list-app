@@ -1,3 +1,5 @@
+@use './variables' as v;
+
 p {
     font-size: 1.3rem;
     line-height: 1.1;
@@ -12,11 +14,11 @@ p {
 }
 
 .textStrokeWhite {
-    -webkit-text-stroke: 1px $white;
+    -webkit-text-stroke: 1px v.$white;
 }
 
 .textStrokeBlack {
-    -webkit-text-stroke: 1px $black;
+    -webkit-text-stroke: 1px v.$black;
 }
 
 
@@ -49,5 +51,5 @@ p {
 
 .title1Blk {
     font-size: 1.6rem;
-    -webkit-text-stroke: 1px $black;
+    -webkit-text-stroke: 1px v.$black;
 }

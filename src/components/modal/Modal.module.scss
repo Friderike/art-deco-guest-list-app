@@ -1,4 +1,4 @@
-@import '../../styles/ui.scss';
+@use '../../styles/variables' as var;
 
 .modal {
     z-index: 1001;
@@ -13,7 +13,7 @@
   }
 
   .form {
-    background: $light-taupe;
+    background: var.$light-taupe;
      width: max(40%,30rem);
      padding: 5rem;    
  }

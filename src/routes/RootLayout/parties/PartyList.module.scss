@@ -1,4 +1,4 @@
-@import "../../../styles/ui.scss";
+@use "../../../styles/indexx";
 
 .partyListContainer {
   display: flex;
@@ -13,14 +13,14 @@
       @media (max-width: 576px) {
         width: min(26rem, 100%);
       }
-  
-      .cardHeadingContainer {
-        inset: 3.2rem 0 0.5rem;
-
-        .cardHeading {
-           text-overflow: ellipsis;
-        }
-       
-      }
   }
+}
+
+.cardHeadingContainer {
+  inset: 3.2rem 0 0.5rem;
+
+  .cardHeading {
+     text-overflow: ellipsis;
+  }
+ 
 }

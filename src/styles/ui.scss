@@ -1,7 +1,6 @@
-@import "./buttons";
-@import "./variables";
-@import "./types";
-@import "./mixin.scss";
+// @use './indexx' as ind;
+@use '../styles/variables' as var;
+@use '../styles/mixin' as mix;
 
 ul {
   margin: 0;
@@ -52,9 +51,9 @@ input.customInput {
 
 .cardHeading {
   font-size: 2rem;
-  background: $white;
+  background: var.$white;
   border-radius: 2rem;
-  border: 1px solid $black;
+  border: 1px solid var.$black;
   padding: 0.5rem 2rem;
   min-width: 18.5rem;
   display: grid;
@@ -72,22 +71,22 @@ input.customInput {
 }
 
 .mainCard {
-  background: $white;
+  background: var.$white;
   padding: 2.8rem 2rem 2rem;
   height: 46.3rem;
   overflow-y: auto;
-  border-inline: 1px solid $line-brown;
+  border-inline: 1px solid var.$line-brown;
 
-  @include insetBoxShadow();
+  @include mix.insetBoxShadow();
 }
 
 .detailCard {
-  background: $paper;
+  background: var.$paper;
   padding: 2rem;
-  border: 1px solid $black;
+  border: 1px solid var.$black;
   position: relative;
 
-  @include detailCardBoxShadow()
+  @include mix.detailCardBoxShadow()
 }
 
 //******* spacing *********

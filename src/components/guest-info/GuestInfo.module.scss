@@ -1,4 +1,4 @@
-@import "../../styles/ui.scss";
+@use "../../styles/indexx";
 
 ul {
   &.guestCardList {
@@ -28,7 +28,7 @@ ul {
 .editContainer {
   width: 100%;
   max-width: 50rem;
-  background-color: $paper;
+  background-color: indexx.$paper;
   display: flex;
   flex-direction: column;
   align-items: center;

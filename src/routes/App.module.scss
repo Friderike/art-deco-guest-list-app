@@ -1,4 +1,4 @@
-@import "../styles/ui.scss";
+@use "../styles/variables" as v;
 
 .landingContainer {
   display: grid;
@@ -8,7 +8,7 @@
  'button'
  'deco-bottom';
 
-  background: $light-taupe;
+  background: v.$light-taupe;
 
   .decoCornersTop {
     &::before {
@@ -28,7 +28,7 @@
       right: 2rem;
       top: 15.4rem;
       transform: scaley(-1);
-      fill: $white;
+      fill: v.$white;
       filter: invert(30%) sepia(10%) saturate(650%) hue-rotate(1deg) brightness(165%) contrast(80%);
 
       @media (max-width: 576px) {
